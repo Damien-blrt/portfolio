@@ -1,0 +1,11 @@
+.mainflex{
+    flex-direction: column;
+}
+aside{
+    width: 100%;
+    order: 3   ;
+}
+.order{
+    margin-top: 4em;
+    width: 100%;
+}
