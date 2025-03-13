@@ -1,0 +1,374 @@
+/* Police et styles globaux */
+@font-face {
+  font-family: 'Pangram';
+  src: url(../font/PPPangramSansRounded-Medium.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Ruska';
+  src: url(../font/ruskadisplay-regular.otf) format('opentype');
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Pangram', sans-serif;
+  margin: 0;
+  padding: 0;
+  
+}
+
+body {
+  padding-top: 40px;
+  background: #453440;
+  color: #CE999B;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+}
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #311E1E;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: 0px 4px 8px;
+}
+
+.nav-link {
+  color: #FCB587;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-link:hover {
+  color: #F7E7CE;
+  background-color: rgb(60, 60, 60);
+  border-radius: 5px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  color: #FCB587;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgb(50, 50, 50);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1000; 
+  width: auto;
+  min-width: 200px;
+  padding: 10px 0;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  color: #FCB587;
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+
+.dropdown-content a:hover {
+  color: #F7E7CE;
+  background-color: rgb(80, 80, 80);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Présentation */
+.presentation {
+  text-align: center;
+  margin: 8%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.presentation h1 {
+  font-size: 4em;
+  align-self: flex-end;
+  padding-top: 2em;
+  font-family: 'Ruska', sans-serif;
+}
+
+.presentation h3 {
+  font-size: 2.5em;
+  font-family: 'Pangram', sans-serif;
+}
+
+.presentation img, .presentation-projet img{
+  width: 250px;
+  height: auto;
+}
+
+/* À propos */
+.about {
+  margin-bottom: 2%;
+  padding: 20px;
+  background: #311E1E;
+  border-radius: 5%;
+  color: #CE999B;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 80%;
+}
+
+.warning {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.background-black {
+  background-color: rgba(0, 0, 0, 0.592);
+  padding: 1em;
+  border-radius: 10%;
+}
+.about h2 {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 5%;
+  margin-top: 2%;
+  font-size: 2.5em;
+}
+.about article {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.about article p {
+  line-height: 1.6;
+  width: 80%;
+  padding: 1%;
+  margin-bottom: 5%;
+  word-break: break-word; 
+}
+
+.about img {
+  min-width: 20%;
+  max-width: 60%;
+  margin-left: 10%;
+  border-radius: 10%;
+}
+
+.marginbottom {
+  margin-bottom: 60%;
+}
+
+
+.about div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40%;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.droiteflex {
+  align-self: flex-end;
+}
+
+
+.gaucheflex {
+  align-self: flex-start;
+}
+
+/* partie formulaire */
+
+
+.form {
+  background-color: #311E1E;
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  color: #CE999B;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="datetime-local"],
+select,
+textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #CE999B;
+  border-radius: 4px;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  background-color: #8B6465;
+  color: #CE999B;
+  font-size: 16px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #8B6465;
+}
+
+input[type="radio"] {
+  margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  .form {
+    padding: 15px;
+  }
+
+
+  input[type="submit"],
+  input[type="reset"] {
+    font-size: 14px;
+  }
+}
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+.sidebar, .sidebar-right {
+  position: fixed;
+  top: 200px;
+  width: 250px;
+  height: 80%;
+  background: rgba(40, 40, 40, 0.9); 
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  color: white;
+  overflow-y: auto;
+  font-size: 16px;
+  z-index: 1;
+}
+
+.sidebar {
+  left: 20px;
+}
+
+.sidebar-right {
+  right: 20px;
+}
+
+
+.sidebar h2, .sidebar-right h2 {
+  margin-bottom: 15px;
+}
+
+.sidebar ul, .sidebar-right ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar li, .sidebar-right li {
+  margin-bottom: 15px;
+}
+
+.presentation-projet {
+  text-align: center;
+  margin: 6%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+
+.presentation-projet h1 {
+  font-size: 3em;
+}
+
+
+/* Le conteneur du README */
+#readme-content {
+  width: 90%;
+  padding: 20px;
+  border-radius: 5%;
+}
+

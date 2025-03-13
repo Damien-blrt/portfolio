@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire</title>
-    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link type="text/css" rel="stylesheet" href="./css/style.css">
 </head>
 <body class="bodyflex">
 
@@ -21,7 +21,7 @@
             <a href="./site.html" class="nav-link">Page principale</a>
             <a href="./parcours.html" class="nav-link">Cursus Scolaire</a>
             <a href="./formulaire.php" class="nav-link">Contact</a>
-            <a href="../images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
+            <a href="./images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
         </nav>
     </header>
 
@@ -36,7 +36,7 @@
             </article>
     </section>
         <section class="form">
-            <form action="../php/formulaire.php" method="POST">
+            <form action="./php/formulaire.php" method="POST">
                 <div>
                     <label for="name">Nom du visiteur</label>
                     <input type="text" id="name" name="name" placeholder="Nom" required/>
@@ -75,7 +75,7 @@
             <div>
                 <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    include '../php/formulaire.php';
+                    include './php/formulaire.php';
                 }
                 ?>
             </div>
