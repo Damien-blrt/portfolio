@@ -19,7 +19,7 @@
                     <a href="./projet4.html">ArtistBot</a>
                 </div>
             </div>
-            <a href="./site.html" class="nav-link">Page principale</a>
+            <a href="./index.html" class="nav-link">Page principale</a>
             <a href="./parcours.html" class="nav-link">Cursus Scolaire</a>
             <!--<a href="./formulaire.php" class="nav-link">Contact</a> -->
             <a href="./images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
