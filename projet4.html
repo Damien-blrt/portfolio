@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1</title>
+    <link type="text/css" rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="dropdown">
+                Projets
+                <div class="dropdown-content">
+                    <a href="./projet1.html">Gestion de stage</a>
+                    <a href="./projet2.html">Base de données Jet-ski</a>
+                    <a href="./projet3.html">Pierre feuille ciseaux</a>
+                    <a href="./projet4.html">ArtistBot</a>
+                </div>
+            </div>
+            <a href="./site.html" class="nav-link">Page principale</a>
+            <a href="./parcours.html" class="nav-link">Cursus scolaire</a>
+            <!--<a href="./formulaire.php" class="nav-link">Contact</a>-->
+            <a href="./images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
+        </nav>
+    </header>
+    <main class="main-content">
+        <section class="presentation-projet">
+            <h1>Projet n°4, Artistbot</h1>
+            <center>
+            <img src="./images/python.png" title="python" alt="logo de python" class="gaucheflex" />
+        </center>
+        </section>
+        <section class="about">
+            <article>
+                <h2><a href="https://github.com/Damien-blrt/Artistbot" class="nav-link">Voir le code source sur GitHub</a>
+                </h2>
+            </article>
+        </section>
+        <section class="about">
+            <article>
+                <p>
+                    Lors de mon premier projet personnel, j’ai développé en Python une application permettant d’automatiser le dessin d’une image en fonction d’une palette de couleurs sélectionnée :<br>  
+                    <strong>- Chargement de l’image :</strong> lecture et traitement d’un fichier image pour extraire les couleurs des pixels.<br>  
+                    <strong>- Sélection des couleurs :</strong> identification et enregistrement des positions des couleurs dans une palette sur l’application de dessin.<br>  
+                    <strong>- Définition de la zone de dessin :</strong> détection interactive des dimensions de la toile par l’utilisateur.<br>  
+                    <strong>- Automatisation du dessin :</strong> reproduction de l’image pixel par pixel en cliquant automatiquement aux bonnes coordonnées.<br>  
+                    <strong>- Interface utilisateur :</strong> utilisation de Tkinter pour guider l’utilisateur à travers chaque étape du processus.<br>
+                </p>
+            </article>
+            <article>
+                <p>
+                    <strong>Usages principaux :</strong><br>  
+                    <strong>- Interface utilisateur :</strong> Fournit un menu interactif permettant de configurer et d’automatiser le dessin.<br>  
+                    <strong>- Gestion de la palette de couleurs :</strong><br>  
+                    - Sélectionner et enregistrer les coordonnées des couleurs disponibles.<br>  
+                    - Associer chaque couleur à une référence précise pour une meilleure correspondance.<br>  
+                    <strong>- Définition de la zone de dessin :</strong><br>  
+                    - Délimiter la zone de la toile en sélectionnant ses coins via des clics.<br>  
+                    - Calculer automatiquement les dimensions pour adapter le placement des pixels.<br>  
+                    <strong>- Automatisation du dessin :</strong><br>  
+                    - Lire l’image et analyser chaque pixel pour identifier sa couleur.<br>  
+                    - Sélectionner la couleur correspondante dans la palette si nécessaire.<br>  
+                    - Dessiner l’image pixel par pixel en cliquant aux emplacements appropriés.<br>  
+                    <strong>- Gestion des performances :</strong><br>  
+                    - Optimisation du délai entre chaque action pour accélérer le dessin.<br>  
+                    - Réduction du nombre de changements de couleurs pour limiter les interruptions.<br>
+                </p>
+            </article>
+            <article>
+                <p>
+                    Ce projet m’a permis d’appliquer mes connaissances et de me familiariser avec Python et d’explorer l’automatisation via pyautogui et la manipulation d’images avec gdal et numpy.<br>  
+                    J’ai dû relever plusieurs défis, notamment la reconnaissance des couleurs et la précision du dessin automatisé.<br>  
+                    Malgré ces difficultés, j’ai réussi à développer une solution fonctionnelle et optimisée.<br>  
+                    Contactez-moi pour plus d’informations sur ce projet ou si vous souhaitez que je vous aide à l’utiliser.
+                </p>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
