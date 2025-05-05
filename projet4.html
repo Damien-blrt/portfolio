@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet 1</title>
+    <title>ArtistBot</title>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
+            <a href="./index.html" class="nav-link">A propos de moi</a>
+            <a href="./competences.html" class="nav-link">Compétences</a>
             <div class="dropdown">
                 Projets
                 <div class="dropdown-content">
@@ -18,27 +20,55 @@
                     <a href="./projet4.html">ArtistBot</a>
                 </div>
             </div>
-            <a href="./index.html" class="nav-link">Page principale</a>
             <a href="./parcours.html" class="nav-link">Cursus scolaire / Expériences professionnelles</a>
             <!--<a href="./formulaire.php" class="nav-link">Contact</a>-->
             <a href="./images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
         </nav>
     </header>
+
     <main class="main-content">
         <section class="presentation-projet">
-            <h1>Projet n°4, Artistbot</h1>
+            <h1>Projet n°4, ArtistBot <strong>en Python</strong></h1>
             <center>
-            <img src="./images/Python-logo-notext.svg" title="python" alt="logo de python" class="gaucheflex" />
-        </center>
+                <img src="./images/Python-logo-notext.svg" title="python" alt="logo de python" class="gaucheflex" />
+            </center>
+            <h2><a href="https://github.com/Damien-blrt/Artistbot" class="nav-link">Voir le code source sur GitHub</a></h2>
         </section>
+
         <section class="about">
             <article>
-                <h2><a href="https://github.com/Damien-blrt/Artistbot" class="nav-link">Voir le code source sur GitHub</a>
-                </h2>
+                <h3>Contexte</h3>
+                <p>
+                    Dans le cadre de mes explorations personnelles en programmation, j’ai décidé de créer une application en Python qui automatise le dessin d’une image à l’aide d’une palette de couleurs sur une interface graphique. Ce projet m’a permis de mieux comprendre l’automatisation, le traitement d’image, ainsi que l’utilisation de bibliothèques Python comme <strong>pyautogui</strong>, <strong>tkinter</strong>, <strong>numpy</strong> ou encore <strong>gdal</strong>.
+                </p>
             </article>
         </section>
+
+        <section class="about">
+            <article>
+                <h3>Objectif</h3>
+                <p>
+                    L’objectif de ce projet était de concevoir un outil capable de reproduire une image pixel par pixel sur une application de dessin, de manière totalement automatisée, à partir d’une simple palette de couleurs sélectionnée par l’utilisateur.
+                </p>
+            </article>
+        </section>
+
+        <section class="about">
+            <article>
+                <h3>Travail réalisé</h3>
+                <p>
+                    <strong>- Chargement de l’image :</strong> Lecture et traitement d’un fichier image pour extraire les couleurs des pixels.<br>
+                    <strong>- Sélection des couleurs :</strong> Enregistrement des positions des couleurs dans la palette, sur l’interface de dessin.<br>
+                    <strong>- Définition de la zone de dessin :</strong> L’utilisateur sélectionne les coins de la toile à l’aide de clics, ce qui permet de déduire les dimensions.<br>
+                    <strong>- Automatisation du dessin :</strong> Pixel par pixel, l’image est reproduite avec précision grâce à des clics automatisés.<br>
+                    <strong>- Interface utilisateur :</strong> Utilisation de Tkinter pour guider l’utilisateur durant les différentes étapes.<br>
+                    <strong>- Optimisation :</strong> Réduction des changements de couleurs et accélération du processus via une gestion optimisée des délais.
+                </p>
+            </article>
+        </section>
+
         <section class="video-container">
-            <h2>Présentation en vidéo (bientot disponible)</h2>
+            <h3>Présentation en vidéo (bientôt disponible)</h3>
             <div class="video-wrapper">
                 <video controls>
                     <source src="./images/animation.mp4" type="video/mp4">
@@ -46,42 +76,13 @@
                 </video>
             </div>
         </section>
+
         <section class="about">
             <article>
+                <h3>Résultats</h3>
                 <p>
-                    Lors de mon premier projet personnel, j’ai développé en Python une application permettant d’automatiser le dessin d’une image en fonction d’une palette de couleurs sélectionnée :<br>  
-                    <strong>- Chargement de l’image :</strong> lecture et traitement d’un fichier image pour extraire les couleurs des pixels.<br>  
-                    <strong>- Sélection des couleurs :</strong> identification et enregistrement des positions des couleurs dans une palette sur l’application de dessin.<br>  
-                    <strong>- Définition de la zone de dessin :</strong> détection interactive des dimensions de la toile par l’utilisateur.<br>  
-                    <strong>- Automatisation du dessin :</strong> reproduction de l’image pixel par pixel en cliquant automatiquement aux bonnes coordonnées.<br>  
-                    <strong>- Interface utilisateur :</strong> utilisation de Tkinter pour guider l’utilisateur à travers chaque étape du processus.<br>
-                </p>
-            </article>
-            <article>
-                <p>
-                    <strong>Usages principaux :</strong><br>  
-                    <strong>- Interface utilisateur :</strong> Fournit un menu interactif permettant de configurer et d’automatiser le dessin.<br>  
-                    <strong>- Gestion de la palette de couleurs :</strong><br>  
-                    - Sélectionner et enregistrer les coordonnées des couleurs disponibles.<br>  
-                    - Associer chaque couleur à une référence précise pour une meilleure correspondance.<br>  
-                    <strong>- Définition de la zone de dessin :</strong><br>  
-                    - Délimiter la zone de la toile en sélectionnant ses coins via des clics.<br>  
-                    - Calculer automatiquement les dimensions pour adapter le placement des pixels.<br>  
-                    <strong>- Automatisation du dessin :</strong><br>  
-                    - Lire l’image et analyser chaque pixel pour identifier sa couleur.<br>  
-                    - Sélectionner la couleur correspondante dans la palette si nécessaire.<br>  
-                    - Dessiner l’image pixel par pixel en cliquant aux emplacements appropriés.<br>  
-                    <strong>- Gestion des performances :</strong><br>  
-                    - Optimisation du délai entre chaque action pour accélérer le dessin.<br>  
-                    - Réduction du nombre de changements de couleurs pour limiter les interruptions.<br>
-                </p>
-            </article>
-            <article>
-                <p>
-                    Ce projet m’a permis d’appliquer mes connaissances et de me familiariser avec Python et d’explorer l’automatisation via pyautogui et la manipulation d’images avec gdal et numpy.<br>  
-                    J’ai dû relever plusieurs défis, notamment la reconnaissance des couleurs et la précision du dessin automatisé.<br>  
-                    Malgré ces difficultés, j’ai réussi à développer une solution fonctionnelle et optimisée.<br>  
-                    Contactez-moi pour plus d’informations sur ce projet ou si vous souhaitez que je vous aide à l’utiliser.
+                    <strong>Compétences développées :</strong> Programmation Python, automatisation avec PyAutoGUI, gestion d’interfaces graphiques avec Tkinter, traitement d’image avec NumPy et GDAL.<br><br>
+                    <strong>Ce que ce projet m’a appris :</strong> J’ai découvert les limites et possibilités de l’automatisation via les scripts, et j’ai dû relever des défis comme la reconnaissance de couleurs, la synchronisation précise des clics et l’optimisation des performances. Ce projet a été une excellente occasion de renforcer mes compétences en développement Python tout en travaillant sur un projet concret et amusant.
                 </p>
             </article>
         </section>

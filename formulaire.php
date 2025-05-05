@@ -10,6 +10,8 @@
 
     <header>
         <nav class="navbar">
+            <a href="./index.html" class="nav-link">A propos de moi</a>
+            <a href="./competences.html" class="nav-link">Compétences</a>
             <div class="dropdown">
                 Projets
                 <div class="dropdown-content">
@@ -19,9 +21,8 @@
                     <a href="./projet4.html">ArtistBot</a>
                 </div>
             </div>
-            <a href="./index.html" class="nav-link">Page principale</a>
-            <a href="./parcours.html" class="nav-link">Cursus Scolaire</a>
-            <!--<a href="./formulaire.php" class="nav-link">Contact</a> -->
+            <a href="./parcours.html" class="nav-link">Cursus scolaire / Expériences professionnelles</a>
+            <!--<a href="./formulaire.php" class="nav-link">Contact</a>-->
             <a href="./images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
         </nav>
     </header>

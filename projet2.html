@@ -3,13 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projet 1</title>
+    <title>SMJetSky</title>
     <link type="text/css" rel="stylesheet" href="./css/code.css">
     <link type="text/css" rel="stylesheet" href="./css/style.css">
+    <meta charset="UTF-8">
+    <title>Affichage PDF avec flèches</title>
+    <style>
+      #pdf-canvas {
+        border: 1px solid black;
+        display: block;
+        max-width: 50%;
+        margin-top: 10px;
+      }
+      #navigation {
+        text-align: center;
+        max-width: 50%;
+      }
+      #navigation button {
+        background-color: #7c2585;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 10px 5px;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #navigation button:hover {
+        background-color: #5e178b;
+        transform: scale(1.05);
+        }
+
+        #navigation span {
+        font-size: 16px;
+        font-weight: bold;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+
 </head>
 <body>
     <header>
         <nav class="navbar">
+            <a href="./index.html" class="nav-link">A propos de moi</a>
+            <a href="./competences.html" class="nav-link">Compétences</a>
             <div class="dropdown">
                 Projets
                 <div class="dropdown-content">
@@ -19,7 +58,6 @@
                     <a href="./projet4.html">ArtistBot</a>
                 </div>
             </div>
-            <a href="./index.html" class="nav-link">Page principale</a>
             <a href="./parcours.html" class="nav-link">Cursus scolaire / Expériences professionnelles</a>
             <!--<a href="./formulaire.php" class="nav-link">Contact</a>-->
             <a href="./images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
@@ -27,194 +65,146 @@
     </header>
     <main class="main-content">
         <section class="presentation-projet">
-            <h1>Projet n°2, Base de donnée Jet-ski <strong>en C</strong></h1>
+            <h1>Projet n°2, Base de donnée Jet-ski <strong>en SQL</strong></h1>
             <center>
-            <img src="./images/sql.png" title="c" alt="logo du c" class="gaucheflex" />
+                <img src="./images/sql.png" title="sql" alt="logo du sql" class="gaucheflex" />
             </center>
+            <h2><a href="https://github.com/Damien-blrt/Gestion-de-stage" class="nav-link">Voir le code source sur GitHub</a></h2>
         </section>
         <section class="about">
             <article>
+                <h3>Contexte</h3>
                 <p>
                     Lors du deuxième projet de BUT informatique, j’ai dû coder en SQL une Base de donnée qui possédait les fonctionnalités suivantes :<br>
                     Le script .sql permettant de supprimer, créer, remplir (jeu de données), afficher les tables et les
-                        requêtes permettant de répondre aux questions<br>
+                    requêtes permettant de répondre aux questions<br>
                 </p>
             </article>
-            <article class="flex-column">
-                <h2>
-                    voici la base de donnée
-                </h2>
-                <pre>  
-        <span class="comment">-- Suppression des tables si elles existent</span>
-        <span class="keyword">DROP TABLE</span> IF EXISTS Location, Fournir, Client, Fournisseur, Jet_ski CASCADE;
-
-        <span class="comment">-- Création de la table Jet_ski</span>
-        <span class="keyword">CREATE TABLE</span> Jet_ski (
-            id <span class="keyword">INT</span> <span class="keyword">PRIMARY KEY</span>,
-            game <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>,
-            modele <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>,
-            marque <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>,
-            annee_fabrication <span class="keyword">INT</span> <span class="keyword">NOT NULL</span>,
-            puissance <span class="keyword">INT</span> <span class="keyword">NOT NULL</span>,
-            type_moteur <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>
-        );
-
-        <span class="comment">-- Création de la table Fournisseur</span>
-        <span class="keyword">CREATE TABLE</span> Fournisseur (
-            id <span class="keyword">INT</span> <span class="keyword">PRIMARY KEY</span>,
-            nom <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>,
-            code_postal <span class="keyword">VARCHAR(10)</span> <span class="keyword">NOT NULL</span>,
-            ville <span class="keyword">VARCHAR(65)</span> <span class="keyword">NOT NULL</span>,
-            tel <span class="keyword">VARCHAR(20)</span>,
-            email <span class="keyword">VARCHAR(100)</span> <span class="keyword">NOT NULL</span>,
-            pays <span class="keyword">VARCHAR(42)</span> <span class="keyword">NOT NULL</span>
-        );
-
-        <span class="comment">-- Création de la table Client</span>
-        <span class="keyword">CREATE TABLE</span> Client (
-            id <span class="keyword">INT</span> <span class="keyword">PRIMARY KEY</span>,
-            nom <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>,
-            prenom <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>,
-            code_postal <span class="keyword">VARCHAR(10)</span> <span class="keyword">NOT NULL</span>,
-            ville <span class="keyword">VARCHAR(65)</span> <span class="keyword">NOT NULL</span>,
-            pays <span class="keyword">VARCHAR(42)</span> <span class="keyword">NOT NULL</span>,
-            tel <span class="keyword">VARCHAR(20)</span> <span class="keyword">NOT NULL</span>,
-            email <span class="keyword">VARCHAR(80)</span>
-        );
-
-        <span class="comment">-- Création de la table Location</span>
-        <span class="keyword">CREATE TABLE</span> Location (
-            id <span class="keyword">INT</span> <span class="keyword">PRIMARY KEY</span>,
-            date_debut <span class="keyword">DATE</span> <span class="keyword">NOT NULL</span>,
-            date_fin <span class="keyword">DATE</span>,
-            prix_tot_ht <span class="keyword">NUMERIC(10, 2)</span> <span class="keyword">NOT NULL</span>,
-            client_id <span class="keyword">INT</span> <span class="keyword">NOT NULL</span>,
-            jet_ski_id <span class="keyword">INT</span> <span class="keyword">NOT NULL</span>,
-            <span class="keyword">CHECK</span> (date_fin IS NULL OR (date_fin > date_debut AND ((date_fin - date_debut) < <span class="number">10</span>))),
-            <span class="keyword">FOREIGN KEY</span> (client_id) <span class="keyword">REFERENCES</span> Client(id) <span class="keyword">ON DELETE CASCADE</span>,
-            <span class="keyword">FOREIGN KEY</span> (jet_ski_id) <span class="keyword">REFERENCES</span> Jet_ski(id) <span class="keyword">ON DELETE CASCADE</span>
-        );
-                    </pre>
-
-    <h1>Insertions SQL</h1>
-    <pre>
-<span class="keyword">INSERT INTO</span> Jet_ski VALUES 
-    (<span class="string">'0001'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Ultra 310LX'</span>, <span class="string">'Kawasaki'</span>, <span class="number">2024</span>, <span class="number">300</span>, <span class="string">'Electrique'</span>),
-    (<span class="string">'0002'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Sea-Doo GTI 170'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2023</span>, <span class="number">170</span>, <span class="string">'Essence'</span>),
-    (<span class="string">'0003'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Yamaha FX Cruiser SVHO'</span>, <span class="string">'Yamaha'</span>, <span class="number">2024</span>, <span class="number">250</span>, <span class="string">'Essence'</span>),
-    (<span class="string">'0004'</span>, <span class="string">'entrée de gamme'</span>, <span class="string">'Yamaha EX Deluxe'</span>, <span class="string">'Yamaha'</span>, <span class="number">2022</span>, <span class="number">100</span>, <span class="string">'Essence'</span>),
-    (<span class="string">'0005'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Sea-Doo Spark 3UP'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2023</span>, <span class="number">90</span>, <span class="string">'Electrique'</span>),
-    (<span class="string">'0006'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Kawasaki Jet Ski Ultra 310R'</span>, <span class="string">'Kawasaki'</span>, <span class="number">2024</span>, <span class="number">310</span>, <span class="string">'Electrique'</span>),
-    (<span class="string">'0007'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Yamaha GP1800R HO'</span>, <span class="string">'Yamaha'</span>, <span class="number">2024</span>, <span class="number">180</span>, <span class="string">'Electrique'</span>),
-    (<span class="string">'0008'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Sea-Doo RXP-X 300'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2024</span>, <span class="number">300</span>, <span class="string">'Electrique'</span>),
-    (<span class="string">'0009'</span>, <span class="string">'entrée de gamme'</span>, <span class="string">'Kawasaki STX 160'</span>, <span class="string">'Kawasaki'</span>, <span class="number">2023</span>, <span class="number">160</span>, <span class="string">'Essence'</span>),
-    (<span class="string">'0010'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Yamaha VX Cruiser'</span>, <span class="string">'Yamaha'</span>, <span class="number">2023</span>, <span class="number">125</span>, <span class="string">'Essence'</span>),
-    (<span class="string">'0011'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Sea-Doo GTX Limited 300'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2024</span>, <span class="number">300</span>, <span class="string">'Essence'</span>),
-    (<span class="string">'0012'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Yamaha FX Limited SVHO'</span>, <span class="string">'Yamaha'</span>, <span class="number">2024</span>, <span class="number">250</span>, <span class="string">'Electrique'</span>),
-    (<span class="string">'0013'</span>, <span class="string">'entrée de gamme'</span>, <span class="string">'Sea-Doo Spark Trixx'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2023</span>, <span class="number">90</span>, <span class="string">'Essence'</span>),
-    (<span class="string">'0014'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Kawasaki Jet Ski SX-R'</span>, <span class="string">'Kawasaki'</span>, <span class="number">2024</span>, <span class="number">150</span>, <span class="string">'Electrique'</span>),
-    (<span class="string">'0015'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Yamaha WaveRunner EXR'</span>, <span class="string">'Yamaha'</span>, <span class="number">2024</span>, <span class="number">180</span>, <span class="string">'Essence'</span>),
-    (<span class="string">'0016'</span>, <span class="string">'entrée de gamme'</span>, <span class="string">'Sea-Doo Spark 2UP'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2022</span>, <span class="number">60</span>, <span class="string">'Electrique'</span>),
-    (<span class="string">'0017'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Kawasaki Jet Ski STX 160LX'</span>, <span class="string">'Kawasaki'</span>, <span class="number">2023</span>, <span class="number">160</span>, <span class="string">'Electrique'</span>),
-    (<span class="string">'0018'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Yamaha GP1800R'</span>, <span class="string">'Yamaha'</span>, <span class="number">2024</span>, <span class="number">230</span>, <span class="string">'Electrique'</span>),
-    (<span class="string">'0019'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Sea-Doo Wake Pro 230'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2023</span>, <span class="number">230</span>, <span class="string">'Electrique'</span>),
-    (<span class="string">'0020'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Kawasaki Jet Ski Ultra LX'</span>, <span class="string">'Kawasaki'</span>, <span class="number">2024</span>, <span class="number">160</span>, <span class="string">'Electrique'</span>);
-
-<span class="keyword">INSERT INTO</span> Fournisseur VALUES 
-    (<span class="number">1</span>, <span class="string">'Kawasaki Motors'</span>, <span class="string">'75008'</span>, <span class="string">'Paris'</span>, <span class="string">'01 40 12 34 56'</span>, <span class="string">'contact@kawasaki.fr'</span>, <span class="string">'France'</span>),
-    (<span class="number">2</span>, <span class="string">'Sea-Doo France'</span>, <span class="string">'69003'</span>, <span class="string">'Lyon'</span>, <span class="string">'04 72 56 78 90'</span>, <span class="string">'support@sea-doo.fr'</span>, <span class="string">'France'</span>),
-    (<span class="number">3</span>, <span class="string">'Yamaha Motor Europe'</span>, <span class="string">'2000'</span>, <span class="string">'Amsterdam'</span>, <span class="string">'+31 20 123 4567'</span>, <span class="string">'info@yamaha.com'</span>, <span class="string">'Pays-Bas'</span>),
-    (<span class="number">4</span>, <span class="string">'Jet Ski World'</span>, <span class="string">'60230'</span>, <span class="string">'Compiègne'</span>, <span class="string">'03 44 22 33 44'</span>, <span class="string">'contact@jetskiworld.com'</span>, <span class="string">'France'</span>),
-    (<span class="number">5</span>, <span class="string">'Wave Rider International'</span>, <span class="string">'75015'</span>, <span class="string">'Paris'</span>, <span class="string">'01 53 67 89 00'</span>, <span class="string">'service@waverider.com'</span>, <span class="string">'France'</span>),
-<span class="keyword">INSERT INTO</span> Location VALUES 
-    (<span class="number">3</span>, <span class="string">'2024-07-18'</span>, <span class="string">'2024-07-20'</span>, <span class="number">360</span>, <span class="number">3</span>, <span class="number">3</span>),
-    (<span class="number">4</span>, <span class="string">'2024-07-21'</span>, <span class="string">'2024-07-24'</span>, <span class="number">180</span>, <span class="number">4</span>, <span class="number">1</span>),
-    (<span class="number">5</span>, <span class="string">'2024-07-05'</span>, <span class="string">'2024-07-07'</span>, <span class="number">150</span>, <span class="number">5</span>, <span class="number">2</span>),
-    (<span class="number">6</span>, <span class="string">'2024-07-23'</span>, <span class="string">'2024-07-25'</span>, <span class="number">200</span>, <span class="number">7</span>, <span class="number">2</span>),
-    (<span class="number">7</span>, <span class="string">'2024-07-27'</span>, <span class="string">'2024-07-29'</span>, <span class="number">300</span>, <span class="number">8</span>, <span class="number">1</span>),
-    (<span class="number">8</span>, <span class="string">'2024-08-01'</span>, <span class="string">'2024-08-05'</span>, <span class="number">200</span>, <span class="number">9</span>, <span class="number">2</span>),
-    (<span class="number">9</span>, <span class="string">'2024-11-26'</span>, <span class="string">'2024-11-27'</span>, <span class="number">360</span>, <span class="number">10</span>, <span class="number">3</span>),
-    (<span class="number">10</span>, <span class="string">'2024-11-26'</span>, <span class="string">'2024-11-28'</span>, <span class="number">180</span>, <span class="number">4</span>, <span class="number">1</span>),
-    (<span class="number">11</span>, <span class="string">'2024-09-05'</span>, <span class="string">NULL</span>, <span class="number">150</span>, <span class="number">5</span>, <span class="number">1</span>),
-    (<span class="number">12</span>, <span class="string">'2024-09-23'</span>, <span class="string">'2024-09-25'</span>, <span class="number">200</span>, <span class="number">6</span>, <span class="number">3</span>);
-
-<span class="keyword">INSERT INTO</span> Fournir VALUES 
-    (<span class="number">1</span>, <span class="number">1</span>, <span class="number">1200.00</span>),
-    (<span class="number">2</span>, <span class="number">2</span>, <span class="number">900.00</span>),
-    (<span class="number">3</span>, <span class="number">1</span>, <span class="number">1500.00</span>),
-    (<span class="number">1</span>, <span class="number">2</span>, <span class="number">1250.00</span>),
-    (<span class="number">2</span>, <span class="number">1</span>, <span class="number">950.00</span>);
-    </pre>
-    <h1>Jeux d'éssais</h1>
-    <pre>
-        <span class="keyword">SELECT</span> Jet_ski.* <span class="comment">/* Quels produits ne sont plus en stock ? */</span>
-        <span class="keyword">FROM</span> Jet_ski <span class="keyword">JOIN</span> Location <span class="keyword">ON</span> Jet_ski.id = Location.jet_ski_id
-        <span class="keyword">WHERE</span> date_fin <span class="keyword">IS</span> <span class="keyword">NULL</span>;
-    
-        <span class="keyword">SELECT</span> nom, prenom, location.* 
-        <span class="keyword">FROM</span> location <span class="keyword">JOIN</span> client <span class="keyword">ON</span> location.client_id = client.id
-        <span class="keyword">WHERE</span> date_debut <span class="keyword">>=</span> DATE(<span class="keyword">CURRENT_DATE</span> <span class="keyword">-</span> <span class="number">7</span>) 
-        <span class="keyword">AND</span> date_debut <span class="keyword"><</span> DATE(<span class="keyword">CURRENT_DATE</span>) 
-        <span class="keyword">AND</span> code_postal <span class="keyword">LIKE</span> <span class="string">'63%'</span>;
-    
-        <span class="keyword">SELECT DISTINCT</span> pays <span class="comment">/* Quels sont les pays dans lesquels l’entreprise a des clients.*/</span>
-        <span class="keyword">FROM</span> client;
-    
-        <span class="keyword">SELECT</span> prix_fourni, prix_fourni <span class="keyword">* </span> <span class="number">1.2</span> <span class="comment">/*Pour un fournisseur de votre choix, lister les produits qu’il
-             fournit ainsi que leur prix de location hors taxe (HT) et taxes comprises (TTC).*/</span>
-        <span class="keyword">FROM</span> Fournir <span class="keyword">JOIN</span> fournisseur <span class="keyword">ON</span> fournir.fournisseur_id = fournisseur.id
-        <span class="keyword">WHERE</span> fournisseur.nom <span class="keyword">LIKE</span> <span class="string">'Kawasaki Motors'</span>;
-    
-        <span class="keyword">SELECT</span> Jet_ski.id <span class="comment">/*Y a-t-il des articles qui n’ont jamais été loués ? Si oui, lesquels ?*/</span>
-        <span class="keyword">FROM</span> Jet_ski 
-        <span class="keyword">WHERE</span> Jet_ski.id <span class="keyword">NOT</span> <span class="keyword">IN</span> (
-            <span class="keyword">SELECT</span> jet_ski_id 
-            <span class="keyword">FROM</span> location
-        );
-    
-        <span class="keyword">SELECT</span> jet_ski_id, prix_fourni <span class="comment">/*Quel est le produit le plus cher (acheté au fournisseur) ?*/</span>
-        <span class="keyword">FROM</span> fournir 
-        <span class="keyword">WHERE</span> prix_fourni <span class="keyword">>=</span> <span class="keyword">ALL</span>(
-            <span class="keyword">SELECT</span> prix_fourni 
-            <span class="keyword">FROM</span> fournir
-        );
-    
-        <span class="keyword">SELECT</span> jet_ski_id, prix_fourni <span class="comment">/*Quel est le produit le moins cher (acheté au fournisseur)?*/</span>
-        <span class="keyword">FROM</span> fournir 
-        <span class="keyword">WHERE</span> prix_fourni <span class="keyword"><=</span> <span class="keyword">ALL</span>(
-            <span class="keyword">SELECT</span> prix_fourni 
-            <span class="keyword">FROM</span> fournir
-        );
-    
-        <span class="keyword">SELECT</span> jet_ski_id, prix_tot_ht <span class="comment">/*Quel est le produit le plus cher (prix de la location)?*/</span>
-        <span class="keyword">FROM</span> location 
-        <span class="keyword">WHERE</span> prix_tot_ht <span class="keyword">>=</span> <span class="keyword">ALL</span>(
-            <span class="keyword">SELECT</span> prix_tot_ht 
-            <span class="keyword">FROM</span> location
-        );
-    
-        <span class="keyword">SELECT</span> jet_ski_id, prix_tot_ht <span class="comment">/*Quel est le produit le moins cher (prix de la location) ?*/</span>
-        <span class="keyword">FROM</span> location 
-        <span class="keyword">WHERE</span> prix_tot_ht <span class="keyword"><=</span> <span class="keyword">ALL</span>(
-            <span class="keyword">SELECT</span> prix_tot_ht 
-            <span class="keyword">FROM</span> location
-        );
-    </pre>
-    
-    
+        </section>
+        <section class="about">
+            <article>
+                <h3>Objectif</h3>
+                <p>
+                    L'objectif était de concevoir et implémenter une base de données complète pour 
+                    une entreprise de location de jet-skis, incluant la gestion des produits, des clients, 
+                    des fournisseurs et des locations.<br> Le projet devait fournir un script SQL permettant 
+                    de créer la structure de la base, d'insérer un jeu de données de test, et de réaliser 
+                    des requêtes d'analyse pertinentes pour le métier.
+                </p>
+            </article>
+        </section>
+        
+        <section class="about">
+            <article>
+                <h3>Travail réalisé</h3>
+                <p>
+                    J'ai développé une base de données complète qui possédait les fonctionnalités suivantes :<br>
+                    - Création de la base de données et des tables nécessaires à la gestion des jet-skis, clients, fournisseurs et locations.<br>
+                    - Insertion d'un jeu de données de test pour simuler des opérations réelles.<br>
+                    - Requêtes permettant de répondre à des questions métier, telles que la disponibilité des jet-skis, les clients les plus fréquents, etc.<br>
+                    - Gestion des relations entre les tables pour assurer l'intégrité des données.<br>
+                </p>
+            </article> 
+            <center>
+                <article class="flex-column">
+                    <p>
+                        Nous avons du également rédiger un document lié à la partie économique :
+                        <canvas id="pdf-canvas"></canvas>
+                        <div id="navigation">
+                        <button onclick="previousPage()">⬅ Précédente</button>
+                        <span>Page <span id="page-num">1</span> / <span id="page-count">--</span></span>
+                        <button onclick="nextPage()">Suivante ➡</button>
+                        </div>
+                    
+                    </p>
+                </article>
+            </center>
+        </section>
 
 
             </article>
         </section>
         <section class="about">
             <article>
+                <h3>Résultats</h3>
                 <p>
-                    Ce projet m’a permis de mettre en application mes premiers cours de SQL.<br>
-                    Les principales difficultés résidaient dans la création des jeux d'éssais afin de répondre correctement au sujet.<br>
-                    Il y avait aussi une partie axée sur l'économie que je peux vous fournir si ça vous interresse.
+                    <strong>Note obtenue :</strong> Pas encore noté <br><br>
+                    <strong>Appréciation :</strong> Les premiers retours sont positives malgrés que ce travail n'est pas encore évalué<br><br>
+                    <strong>Compétences développées :</strong><br>
+                    - Conception de bases de données relationnelles<br>
+                    - Rédaction de requêtes SQL "complexes"<br>
+                    - Gestion / analyses des données<br>
+                    - Compréhension des besoins métier et traduction en schéma de base de données<br><br>
+                    <strong>Ce que ce projet m'a appris :</strong> Ce projet m'a permis de comprendre l'importance de la modélisation des données et de la gestion des relations entre les tables. J'ai également appris à rédiger des requêtes SQL complexes pour extraire des informations pertinentes à partir de la base de données. Cela m'a donné une meilleure compréhension de la manière dont les bases de données sont utilisées dans le monde réel et comment elles peuvent être optimisées pour répondre aux besoins d'une entreprise.<br>
+                     J'ai particulièrement apprécié le défi de concevoir une base de données complète et fonctionnelle. Cela m'a permis d'appliquer mes connaissances théoriques à un projet concret et de voir comment les bases de données peuvent être utilisées pour résoudre des problèmes réels. J'ai également aimé travailler sur les requêtes SQL, car cela m'a permis d'explorer différentes façons d'interroger et d'analyser les données.<br>
                 </p>
             </article>
         </section>
     </main>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+  <script>
+    const url = './images/jetsky.pdf'; 
+
+    let pdfDoc = null,
+        pageNum = 1,
+        pageRendering = false,
+        pageNumPending = null,
+        scale = 1.2,
+        canvas = document.getElementById('pdf-canvas'),
+        ctx = canvas.getContext('2d');
+
+    function renderPage(num) {
+      pageRendering = true;
+      pdfDoc.getPage(num).then(function(page) {
+        let viewport = page.getViewport({ scale: scale });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        let renderContext = {
+          canvasContext: ctx,
+          viewport: viewport
+        };
+        let renderTask = page.render(renderContext);
+
+        renderTask.promise.then(function () {
+          pageRendering = false;
+          if (pageNumPending !== null) {
+            renderPage(pageNumPending);
+            pageNumPending = null;
+          }
+        });
+      });
+
+      document.getElementById('page-num').textContent = num;
+    }
+
+    function queueRenderPage(num) {
+      if (pageRendering) {
+        pageNumPending = num;
+      } else {
+        renderPage(num);
+      }
+    }
+
+    function previousPage() {
+      if (pageNum <= 1) return;
+      pageNum--;
+      queueRenderPage(pageNum);
+    }
+
+    function nextPage() {
+      if (pageNum >= pdfDoc.numPages) return;
+      pageNum++;
+      queueRenderPage(pageNum);
+    }
+
+    pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
+      pdfDoc = pdfDoc_;
+      document.getElementById('page-count').textContent = pdfDoc.numPages;
+      renderPage(pageNum);
+    });
+  </script>
 </body>
 </html>
