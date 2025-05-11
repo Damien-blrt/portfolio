@@ -3,49 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pierre-feuille-ciseaux</title>
-    <link type="text/css" rel="stylesheet" href="./css/style.css">
+    <title>Projet 1</title>
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <a href="./index.html" class="nav-link">A propos de moi</a>
-            <a href="./competences.html" class="nav-link">Compétences</a>
             <div class="dropdown">
                 Projets
                 <div class="dropdown-content">
                     <a href="./projet1.html">Gestion de stage</a>
                     <a href="./projet2.html">Base de données Jet-ski</a>
-                    <a href="./projet4.html">ArtistBot</a>
+                    <a href="./projet3.html">Pierre feuille ciseaux</a>
                 </div>
             </div>
+            <a href="./site.html" class="nav-link">Page principale</a>
             <a href="./parcours.html" class="nav-link">Cursus scolaire</a>
-            <a href="./experience.html" class="nav-link">Expériences professionnelles</a>
             <a href="./formulaire.php" class="nav-link">Contact</a>
-            <a href="./images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
+            <a href="../images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
         </nav>
     </header>
     <main class="main-content">
         <section class="presentation-projet">
             <h1>Projet n°3, Pierre feuille ciseaux <strong>en C</strong></h1>
             <center>
-                <img src="./images/C.png" title="c" alt="logo du c" class="gaucheflex" />
+                <img src="../images/C.png" title="c" alt="logo du c" class="gaucheflex" />
             </center>
         </section>
         <section class="about">
             <article>
-                <h2><a href="https://github.com/Damien-blrt/Pierre-feuille-ciseaux" class="nav-link">Voir le code source sur GitHub</a></h2>
+                <h2><a href="https://github.com/Damienssssss/Pierre-feuille-ciseaux" class="nav-link">Voir le code source sur GitHub</a></h2>
             </article>
-        </section>
-        <section class="video-container">
-            <h2>Présentation en vidéo</h2>
-            <div class="video-wrapper">
-                <video controls muted>
-                    <source src="./images/PFC.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture de vidéos.
-                </video>
-            </div>
         </section>
         <section class="about">
             <article class="flex-column">
@@ -56,7 +45,7 @@
     </main>
 
     <script>
-        fetch('./ProjetDeC.md')
+        fetch('./README.md')
             .then(response => response.text())
             .then(text => {
                 

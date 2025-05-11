@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1</title>
+    <link type="text/css" rel="stylesheet" href="../css/code.css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="dropdown">
+                Projets
+                <div class="dropdown-content">
+                    <a href="./projet1.html">Gestion de stage</a>
+                    <a href="./projet2.html">Base de données Jet-ski</a>
+                    <a href="./projet3.html">Pierre feuille ciseaux</a>
+                </div>
+            </div>
+            <a href="./site.html" class="nav-link">Page principale</a>
+            <a href="./parcours.html" class="nav-link">Cursus scolaire</a>
+            <a href="./formulaire.php" class="nav-link">Contact</a>
+            <a href="../images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
+        </nav>
+    </header>
+    <main class="main-content">
+        <section class="presentation-projet">
+            <h1>Projet n°2, Base de donnée Jet-ski <strong>en C</strong></h1>
+            <center>
+            <img src="../images/sql.png" title="c" alt="logo du c" class="gaucheflex" />
+            </center>
+        </section>
+        <section class="about">
+            <article>
+                <p>
+                    Lors du deuxième projet de BUT informatique, j’ai dû coder en SQL une Base de donnée qui possédait les fonctionnalités suivantes :<br>
+                    Le script .sql permettant de supprimer, créer, remplir (jeu de données), afficher les tables et les
+                        requêtes permettant de répondre aux questions<br>
+                </p>
+            </article>
+            <article class="flex-column">
+                <h2>
+                    voici la base de donnée
+                </h2>
+                <pre>  
+        <span class="comment">-- Suppression des tables si elles existent</span>
+        <span class="keyword">DROP TABLE</span> IF EXISTS Location, Fournir, Client, Fournisseur, Jet_ski CASCADE;
+
+        <span class="comment">-- Création de la table Jet_ski</span>
+        <span class="keyword">CREATE TABLE</span> Jet_ski (
+            id <span class="keyword">INT</span> <span class="keyword">PRIMARY KEY</span>,
+            game <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>,
+            modele <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>,
+            marque <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>,
+            annee_fabrication <span class="keyword">INT</span> <span class="keyword">NOT NULL</span>,
+            puissance <span class="keyword">INT</span> <span class="keyword">NOT NULL</span>,
+            type_moteur <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>
+        );
+
+        <span class="comment">-- Création de la table Fournisseur</span>
+        <span class="keyword">CREATE TABLE</span> Fournisseur (
+            id <span class="keyword">INT</span> <span class="keyword">PRIMARY KEY</span>,
+            nom <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>,
+            code_postal <span class="keyword">VARCHAR(10)</span> <span class="keyword">NOT NULL</span>,
+            ville <span class="keyword">VARCHAR(65)</span> <span class="keyword">NOT NULL</span>,
+            tel <span class="keyword">VARCHAR(20)</span>,
+            email <span class="keyword">VARCHAR(100)</span> <span class="keyword">NOT NULL</span>,
+            pays <span class="keyword">VARCHAR(42)</span> <span class="keyword">NOT NULL</span>
+        );
+
+        <span class="comment">-- Création de la table Client</span>
+        <span class="keyword">CREATE TABLE</span> Client (
+            id <span class="keyword">INT</span> <span class="keyword">PRIMARY KEY</span>,
+            nom <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>,
+            prenom <span class="keyword">VARCHAR(50)</span> <span class="keyword">NOT NULL</span>,
+            code_postal <span class="keyword">VARCHAR(10)</span> <span class="keyword">NOT NULL</span>,
+            ville <span class="keyword">VARCHAR(65)</span> <span class="keyword">NOT NULL</span>,
+            pays <span class="keyword">VARCHAR(42)</span> <span class="keyword">NOT NULL</span>,
+            tel <span class="keyword">VARCHAR(20)</span> <span class="keyword">NOT NULL</span>,
+            email <span class="keyword">VARCHAR(80)</span>
+        );
+
+        <span class="comment">-- Création de la table Location</span>
+        <span class="keyword">CREATE TABLE</span> Location (
+            id <span class="keyword">INT</span> <span class="keyword">PRIMARY KEY</span>,
+            date_debut <span class="keyword">DATE</span> <span class="keyword">NOT NULL</span>,
+            date_fin <span class="keyword">DATE</span>,
+            prix_tot_ht <span class="keyword">NUMERIC(10, 2)</span> <span class="keyword">NOT NULL</span>,
+            client_id <span class="keyword">INT</span> <span class="keyword">NOT NULL</span>,
+            jet_ski_id <span class="keyword">INT</span> <span class="keyword">NOT NULL</span>,
+            <span class="keyword">CHECK</span> (date_fin IS NULL OR (date_fin > date_debut AND ((date_fin - date_debut) < <span class="number">10</span>))),
+            <span class="keyword">FOREIGN KEY</span> (client_id) <span class="keyword">REFERENCES</span> Client(id) <span class="keyword">ON DELETE CASCADE</span>,
+            <span class="keyword">FOREIGN KEY</span> (jet_ski_id) <span class="keyword">REFERENCES</span> Jet_ski(id) <span class="keyword">ON DELETE CASCADE</span>
+        );
+                    </pre>
+
+    <h1>Insertions SQL</h1>
+    <pre>
+<span class="keyword">INSERT INTO</span> Jet_ski VALUES 
+    (<span class="string">'0001'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Ultra 310LX'</span>, <span class="string">'Kawasaki'</span>, <span class="number">2024</span>, <span class="number">300</span>, <span class="string">'Electrique'</span>),
+    (<span class="string">'0002'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Sea-Doo GTI 170'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2023</span>, <span class="number">170</span>, <span class="string">'Essence'</span>),
+    (<span class="string">'0003'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Yamaha FX Cruiser SVHO'</span>, <span class="string">'Yamaha'</span>, <span class="number">2024</span>, <span class="number">250</span>, <span class="string">'Essence'</span>),
+    (<span class="string">'0004'</span>, <span class="string">'entrée de gamme'</span>, <span class="string">'Yamaha EX Deluxe'</span>, <span class="string">'Yamaha'</span>, <span class="number">2022</span>, <span class="number">100</span>, <span class="string">'Essence'</span>),
+    (<span class="string">'0005'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Sea-Doo Spark 3UP'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2023</span>, <span class="number">90</span>, <span class="string">'Electrique'</span>),
+    (<span class="string">'0006'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Kawasaki Jet Ski Ultra 310R'</span>, <span class="string">'Kawasaki'</span>, <span class="number">2024</span>, <span class="number">310</span>, <span class="string">'Electrique'</span>),
+    (<span class="string">'0007'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Yamaha GP1800R HO'</span>, <span class="string">'Yamaha'</span>, <span class="number">2024</span>, <span class="number">180</span>, <span class="string">'Electrique'</span>),
+    (<span class="string">'0008'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Sea-Doo RXP-X 300'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2024</span>, <span class="number">300</span>, <span class="string">'Electrique'</span>),
+    (<span class="string">'0009'</span>, <span class="string">'entrée de gamme'</span>, <span class="string">'Kawasaki STX 160'</span>, <span class="string">'Kawasaki'</span>, <span class="number">2023</span>, <span class="number">160</span>, <span class="string">'Essence'</span>),
+    (<span class="string">'0010'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Yamaha VX Cruiser'</span>, <span class="string">'Yamaha'</span>, <span class="number">2023</span>, <span class="number">125</span>, <span class="string">'Essence'</span>),
+    (<span class="string">'0011'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Sea-Doo GTX Limited 300'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2024</span>, <span class="number">300</span>, <span class="string">'Essence'</span>),
+    (<span class="string">'0012'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Yamaha FX Limited SVHO'</span>, <span class="string">'Yamaha'</span>, <span class="number">2024</span>, <span class="number">250</span>, <span class="string">'Electrique'</span>),
+    (<span class="string">'0013'</span>, <span class="string">'entrée de gamme'</span>, <span class="string">'Sea-Doo Spark Trixx'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2023</span>, <span class="number">90</span>, <span class="string">'Essence'</span>),
+    (<span class="string">'0014'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Kawasaki Jet Ski SX-R'</span>, <span class="string">'Kawasaki'</span>, <span class="number">2024</span>, <span class="number">150</span>, <span class="string">'Electrique'</span>),
+    (<span class="string">'0015'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Yamaha WaveRunner EXR'</span>, <span class="string">'Yamaha'</span>, <span class="number">2024</span>, <span class="number">180</span>, <span class="string">'Essence'</span>),
+    (<span class="string">'0016'</span>, <span class="string">'entrée de gamme'</span>, <span class="string">'Sea-Doo Spark 2UP'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2022</span>, <span class="number">60</span>, <span class="string">'Electrique'</span>),
+    (<span class="string">'0017'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Kawasaki Jet Ski STX 160LX'</span>, <span class="string">'Kawasaki'</span>, <span class="number">2023</span>, <span class="number">160</span>, <span class="string">'Electrique'</span>),
+    (<span class="string">'0018'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Yamaha GP1800R'</span>, <span class="string">'Yamaha'</span>, <span class="number">2024</span>, <span class="number">230</span>, <span class="string">'Electrique'</span>),
+    (<span class="string">'0019'</span>, <span class="string">'haut de gamme'</span>, <span class="string">'Sea-Doo Wake Pro 230'</span>, <span class="string">'Sea-Doo'</span>, <span class="number">2023</span>, <span class="number">230</span>, <span class="string">'Electrique'</span>),
+    (<span class="string">'0020'</span>, <span class="string">'moyenne gamme'</span>, <span class="string">'Kawasaki Jet Ski Ultra LX'</span>, <span class="string">'Kawasaki'</span>, <span class="number">2024</span>, <span class="number">160</span>, <span class="string">'Electrique'</span>);
+
+<span class="keyword">INSERT INTO</span> Fournisseur VALUES 
+    (<span class="number">1</span>, <span class="string">'Kawasaki Motors'</span>, <span class="string">'75008'</span>, <span class="string">'Paris'</span>, <span class="string">'01 40 12 34 56'</span>, <span class="string">'contact@kawasaki.fr'</span>, <span class="string">'France'</span>),
+    (<span class="number">2</span>, <span class="string">'Sea-Doo France'</span>, <span class="string">'69003'</span>, <span class="string">'Lyon'</span>, <span class="string">'04 72 56 78 90'</span>, <span class="string">'support@sea-doo.fr'</span>, <span class="string">'France'</span>),
+    (<span class="number">3</span>, <span class="string">'Yamaha Motor Europe'</span>, <span class="string">'2000'</span>, <span class="string">'Amsterdam'</span>, <span class="string">'+31 20 123 4567'</span>, <span class="string">'info@yamaha.com'</span>, <span class="string">'Pays-Bas'</span>),
+    (<span class="number">4</span>, <span class="string">'Jet Ski World'</span>, <span class="string">'60230'</span>, <span class="string">'Compiègne'</span>, <span class="string">'03 44 22 33 44'</span>, <span class="string">'contact@jetskiworld.com'</span>, <span class="string">'France'</span>),
+    (<span class="number">5</span>, <span class="string">'Wave Rider International'</span>, <span class="string">'75015'</span>, <span class="string">'Paris'</span>, <span class="string">'01 53 67 89 00'</span>, <span class="string">'service@waverider.com'</span>, <span class="string">'France'</span>),
+<span class="keyword">INSERT INTO</span> Location VALUES 
+    (<span class="number">3</span>, <span class="string">'2024-07-18'</span>, <span class="string">'2024-07-20'</span>, <span class="number">360</span>, <span class="number">3</span>, <span class="number">3</span>),
+    (<span class="number">4</span>, <span class="string">'2024-07-21'</span>, <span class="string">'2024-07-24'</span>, <span class="number">180</span>, <span class="number">4</span>, <span class="number">1</span>),
+    (<span class="number">5</span>, <span class="string">'2024-07-05'</span>, <span class="string">'2024-07-07'</span>, <span class="number">150</span>, <span class="number">5</span>, <span class="number">2</span>),
+    (<span class="number">6</span>, <span class="string">'2024-07-23'</span>, <span class="string">'2024-07-25'</span>, <span class="number">200</span>, <span class="number">7</span>, <span class="number">2</span>),
+    (<span class="number">7</span>, <span class="string">'2024-07-27'</span>, <span class="string">'2024-07-29'</span>, <span class="number">300</span>, <span class="number">8</span>, <span class="number">1</span>),
+    (<span class="number">8</span>, <span class="string">'2024-08-01'</span>, <span class="string">'2024-08-05'</span>, <span class="number">200</span>, <span class="number">9</span>, <span class="number">2</span>),
+    (<span class="number">9</span>, <span class="string">'2024-11-26'</span>, <span class="string">'2024-11-27'</span>, <span class="number">360</span>, <span class="number">10</span>, <span class="number">3</span>),
+    (<span class="number">10</span>, <span class="string">'2024-11-26'</span>, <span class="string">'2024-11-28'</span>, <span class="number">180</span>, <span class="number">4</span>, <span class="number">1</span>),
+    (<span class="number">11</span>, <span class="string">'2024-09-05'</span>, <span class="string">NULL</span>, <span class="number">150</span>, <span class="number">5</span>, <span class="number">1</span>),
+    (<span class="number">12</span>, <span class="string">'2024-09-23'</span>, <span class="string">'2024-09-25'</span>, <span class="number">200</span>, <span class="number">6</span>, <span class="number">3</span>);
+
+<span class="keyword">INSERT INTO</span> Fournir VALUES 
+    (<span class="number">1</span>, <span class="number">1</span>, <span class="number">1200.00</span>),
+    (<span class="number">2</span>, <span class="number">2</span>, <span class="number">900.00</span>),
+    (<span class="number">3</span>, <span class="number">1</span>, <span class="number">1500.00</span>),
+    (<span class="number">1</span>, <span class="number">2</span>, <span class="number">1250.00</span>),
+    (<span class="number">2</span>, <span class="number">1</span>, <span class="number">950.00</span>);
+    </pre>
+    <h1>Jeux d'éssais</h1>
+    <pre>
+        <span class="keyword">SELECT</span> Jet_ski.* <span class="comment">/* Quels produits ne sont plus en stock ? */</span>
+        <span class="keyword">FROM</span> Jet_ski <span class="keyword">JOIN</span> Location <span class="keyword">ON</span> Jet_ski.id = Location.jet_ski_id
+        <span class="keyword">WHERE</span> date_fin <span class="keyword">IS</span> <span class="keyword">NULL</span>;
+    
+        <span class="keyword">SELECT</span> nom, prenom, location.* 
+        <span class="keyword">FROM</span> location <span class="keyword">JOIN</span> client <span class="keyword">ON</span> location.client_id = client.id
+        <span class="keyword">WHERE</span> date_debut <span class="keyword">>=</span> DATE(<span class="keyword">CURRENT_DATE</span> <span class="keyword">-</span> <span class="number">7</span>) 
+        <span class="keyword">AND</span> date_debut <span class="keyword"><</span> DATE(<span class="keyword">CURRENT_DATE</span>) 
+        <span class="keyword">AND</span> code_postal <span class="keyword">LIKE</span> <span class="string">'63%'</span>;
+    
+        <span class="keyword">SELECT DISTINCT</span> pays <span class="comment">/* Quels sont les pays dans lesquels l’entreprise a des clients.*/</span>
+        <span class="keyword">FROM</span> client;
+    
+        <span class="keyword">SELECT</span> prix_fourni, prix_fourni <span class="keyword">* </span> <span class="number">1.2</span> <span class="comment">/*Pour un fournisseur de votre choix, lister les produits qu’il
+             fournit ainsi que leur prix de location hors taxe (HT) et taxes comprises (TTC).*/</span>
+        <span class="keyword">FROM</span> Fournir <span class="keyword">JOIN</span> fournisseur <span class="keyword">ON</span> fournir.fournisseur_id = fournisseur.id
+        <span class="keyword">WHERE</span> fournisseur.nom <span class="keyword">LIKE</span> <span class="string">'Kawasaki Motors'</span>;
+    
+        <span class="keyword">SELECT</span> Jet_ski.id <span class="comment">/*Y a-t-il des articles qui n’ont jamais été loués ? Si oui, lesquels ?*/</span>
+        <span class="keyword">FROM</span> Jet_ski 
+        <span class="keyword">WHERE</span> Jet_ski.id <span class="keyword">NOT</span> <span class="keyword">IN</span> (
+            <span class="keyword">SELECT</span> jet_ski_id 
+            <span class="keyword">FROM</span> location
+        );
+    
+        <span class="keyword">SELECT</span> jet_ski_id, prix_fourni <span class="comment">/*Quel est le produit le plus cher (acheté au fournisseur) ?*/</span>
+        <span class="keyword">FROM</span> fournir 
+        <span class="keyword">WHERE</span> prix_fourni <span class="keyword">>=</span> <span class="keyword">ALL</span>(
+            <span class="keyword">SELECT</span> prix_fourni 
+            <span class="keyword">FROM</span> fournir
+        );
+    
+        <span class="keyword">SELECT</span> jet_ski_id, prix_fourni <span class="comment">/*Quel est le produit le moins cher (acheté au fournisseur)?*/</span>
+        <span class="keyword">FROM</span> fournir 
+        <span class="keyword">WHERE</span> prix_fourni <span class="keyword"><=</span> <span class="keyword">ALL</span>(
+            <span class="keyword">SELECT</span> prix_fourni 
+            <span class="keyword">FROM</span> fournir
+        );
+    
+        <span class="keyword">SELECT</span> jet_ski_id, prix_tot_ht <span class="comment">/*Quel est le produit le plus cher (prix de la location)?*/</span>
+        <span class="keyword">FROM</span> location 
+        <span class="keyword">WHERE</span> prix_tot_ht <span class="keyword">>=</span> <span class="keyword">ALL</span>(
+            <span class="keyword">SELECT</span> prix_tot_ht 
+            <span class="keyword">FROM</span> location
+        );
+    
+        <span class="keyword">SELECT</span> jet_ski_id, prix_tot_ht <span class="comment">/*Quel est le produit le moins cher (prix de la location) ?*/</span>
+        <span class="keyword">FROM</span> location 
+        <span class="keyword">WHERE</span> prix_tot_ht <span class="keyword"><=</span> <span class="keyword">ALL</span>(
+            <span class="keyword">SELECT</span> prix_tot_ht 
+            <span class="keyword">FROM</span> location
+        );
+    </pre>
+    
+    
+
+
+            </article>
+        </section>
+        <section class="about">
+            <article>
+                <p>
+                    Ce projet m’a permis de mettre en application mes premiers cours de SQL.<br>
+                    Les principales difficultés résidaient dans la création des jeux d'éssais afin de répondre correctement au sujet.<br>
+                    Il y avait aussi une partie axée sur l'économie que je peux vous fournir si ça vous interresse.
+                </p>
+            </article>
+        </section>
+    </main>
+</body>
+</html>

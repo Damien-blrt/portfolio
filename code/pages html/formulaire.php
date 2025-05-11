@@ -4,26 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulaire</title>
-    <link type="text/css" rel="stylesheet" href="./css/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
 </head>
 <body class="bodyflex">
 
     <header>
         <nav class="navbar">
-            <a href="./index.html" class="nav-link">A propos de moi</a>
-            <a href="./competences.html" class="nav-link">Compétences</a>
             <div class="dropdown">
                 Projets
                 <div class="dropdown-content">
                     <a href="./projet1.html">Gestion de stage</a>
                     <a href="./projet2.html">Base de données Jet-ski</a>
-                    <a href="./projet4.html">ArtistBot</a>
+                    <a href="./projet3.html">Pierre feuille ciseaux</a>
                 </div>
             </div>
-            <a href="./parcours.html" class="nav-link">Cursus scolaire</a>
-            <a href="./experience.html" class="nav-link">Expériences professionnelles</a>
+            <a href="./site.html" class="nav-link">Page principale</a>
+            <a href="./parcours.html" class="nav-link">Cursus Scolaire</a>
             <a href="./formulaire.php" class="nav-link">Contact</a>
-            <a href="./images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
+            <a href="../images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
         </nav>
     </header>
 
@@ -38,7 +36,7 @@
             </article>
     </section>
         <section class="form">
-            <form action="./php/formulaire.php" method="POST">
+            <form action="../php/formulaire.php" method="POST">
                 <div>
                     <label for="name">Nom du visiteur</label>
                     <input type="text" id="name" name="name" placeholder="Nom" required/>
@@ -77,7 +75,7 @@
             <div>
                 <?php
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    include './php/formulaire.php';
+                    include '../php/formulaire.php';
                 }
                 ?>
             </div>
