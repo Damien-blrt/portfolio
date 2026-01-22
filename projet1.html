@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +8,36 @@
     <link type="text/css" rel="stylesheet" href="./css/style.css">
     <script src="./js/menu.js" defer></script>
 </head>
+
 <body>
 
     <main class="main-content">
-        <section class="presentation-projet">
-            <h1>Jardinageons <span class="tech-badge">Application de gestion de potager</span></h1>
-            <div class="project-image-placeholder">
-                <p class="placeholder-text">Image du projet Jardinageons</p>
-            </div>
-            <div class="tech-stack">
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">PHP</span>
-                <span class="tech-tag">Twig</span>
-                <span class="tech-tag">Bootstrap</span>
-                <span class="tech-tag">Alto Router</span>
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">Kotlin</span>
-                <span class="tech-tag">C#</span>
-                <span class="tech-tag">Entity Framework</span>
-                <span class="tech-tag">Blazor</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">xUnit</span>
-            </div>
-        </section>
+        <div class="project-image-placeholder">
+            <img src="./images/Jardinageons.png" title="Jardinageons" alt="logo de Jardinageons" />
+        </div>
+        <div class="tech-stack">
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">Twig</span>
+            <span class="tech-tag">Bootstrap</span>
+            <span class="tech-tag">Alto Router</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">Kotlin</span>
+            <span class="tech-tag">C#</span>
+            <span class="tech-tag">Entity Framework</span>
+            <span class="tech-tag">Blazor</span>
+            <span class="tech-tag">Docker</span>
+            <span class="tech-tag">xUnit</span>
+        </div>
 
         <section class="about">
             <article>
                 <h3>Contexte</h3>
                 <p>
-                    Jardinageons est un projet de gestion de potager conçu pour aider les particuliers à organiser, suivre et optimiser leurs activités de jardinage. 
-                    Le produit centralise l'ensemble des données liées au jardin — plantations, arrosage, stocks, récoltes et historique — afin de remplacer les supports papier 
+                    Jardinageons est un projet de gestion de potager conçu pour aider les particuliers à organiser,
+                    suivre et optimiser leurs activités de jardinage.
+                    Le produit centralise l'ensemble des données liées au jardin — plantations, arrosage, stocks,
+                    récoltes et historique — afin de remplacer les supports papier
                     et les outils fragmentés par une solution unique et cohérente.
                 </p>
             </article>
@@ -46,8 +47,10 @@
             <article>
                 <h3>Objectif</h3>
                 <p>
-                    Développer une application de gestion de potager permettant de planifier, organiser et suivre l'ensemble des activités de jardinage 
-                    (plantations, arrosage, stocks et récoltes) via une interface claire et structurée. Le projet vise à offrir une solution complète 
+                    Développer une application de gestion de potager permettant de planifier, organiser et suivre
+                    l'ensemble des activités de jardinage
+                    (plantations, arrosage, stocks et récoltes) via une interface claire et structurée. Le projet vise à
+                    offrir une solution complète
                     et moderne pour remplacer les méthodes traditionnelles de suivi de jardinage.
                 </p>
             </article>
@@ -57,25 +60,35 @@
             <article>
                 <h3>Architecture technique</h3>
                 <p>
-                    Le projet repose sur une <strong>architecture multi-clients</strong> (applications mobile et web) connectée à une API centrale. 
+                    Le projet repose sur une <strong>architecture multi-clients</strong> (applications mobile et web)
+                    connectée à une API centrale.
                     Cette API est responsable de la gestion des données et de l'application des règles métier.
                 </p>
                 <div class="architecture-details">
                     <div class="arch-item">
                         <h4>Clean Architecture</h4>
-                        <p>Architecture inspirée de la Clean Architecture, avec une séparation claire entre le domaine métier, la couche applicative et la persistance.</p>
+                        <p>Architecture inspirée de la Clean Architecture, avec une séparation claire entre le domaine
+                            métier, la couche applicative et la persistance.</p>
                     </div>
                     <div class="arch-item">
                         <h4>Repository & Unit of Work</h4>
-                        <p>Accès aux données structuré autour des patterns Repository et Unit of Work, garantissant cohérence transactionnelle et découplage.</p>
+                        <p>Accès aux données structuré autour des patterns Repository et Unit of Work, garantissant
+                            cohérence transactionnelle et découplage.</p>
                     </div>
                     <div class="arch-item">
                         <h4>Mappers</h4>
-                        <p>Système de mappers assurant la transformation entre entités métier et DTOs exposés par l'API.</p>
+                        <p>Système de mappers assurant la transformation entre entités métier et DTOs exposés par l'API.
+                        </p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>MVC</h4>
+                        <p>Application web développée selon le modèle MVC, avec Twig pour le rendu des vues et Bootstrap
+                            pour le design responsive.</p>
                     </div>
                 </div>
                 <p class="architecture-benefit">
-                    Cette approche permet une application maintenable, testable et évolutive, capable de supporter plusieurs clients et des fonctionnalités futures.
+                    Cette approche permet une application maintenable, testable et évolutive, capable de supporter
+                    plusieurs clients et des fonctionnalités futures.
                 </p>
             </article>
         </section>
@@ -97,10 +110,11 @@
                     <div class="work-item">
                         <h4>Application Web</h4>
                         <ul>
+                            <li>Modèle MVC en PHP</li>
                             <li>Interface web en PHP avec Twig</li>
                             <li>Framework Bootstrap pour le design responsive</li>
                             <li>Alto Router pour le routage</li>
-                            <li>JavaScript pour l'interactivité</li>
+                            <li>JavaScript pour l'interactivité avec le canva</li>
                         </ul>
                     </div>
                     <div class="work-item">
@@ -143,19 +157,15 @@
         <section class="image-gallery">
             <h3>Captures d'écran</h3>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <p>Capture d'écran - Interface web</p>
-                    </div>
+                <div class="project-image-placeholder">
+                    <img src="./images/JardinageonsPhp.png" title="JardinagonsApi" alt="JardinagonsApi" />
+                </div>
+                <div class="project-image-placeholder">
+                    <img src="./images/jardinageonsapI.png" title="JardinagonsApi" alt="JardinagonsApi" />
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-placeholder">
-                        <p>Capture d'écran - Application mobile</p>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-placeholder">
-                        <p>Capture d'écran - API et architecture</p>
+                        <p>Capture d'écran - Mobile à venir</p>
                     </div>
                 </div>
             </div>
@@ -166,19 +176,26 @@
                 <h3>Résultats</h3>
                 <p>
                     <strong>Compétences développées :</strong><br>
-                    Architecture logicielle avancée, développement d'API RESTful, Clean Architecture, patterns de conception (Repository, Unit of Work), 
-                    développement multi-plateformes (web et mobile), gestion de bases de données PostgreSQL, tests unitaires, containerisation Docker, 
+                    Architecture logicielle avancée, développement d'API RESTful, Clean Architecture, patterns de
+                    conception (Repository, Unit of Work),
+                    développement multi-plateformes (web et mobile), gestion de bases de données PostgreSQL, tests
+                    unitaires, containerisation Docker,
                     développement en C#, PHP, Kotlin, et Blazor.
                 </p>
                 <p>
                     <strong>Ce que ce projet m'a appris :</strong><br>
-                    Ce projet m'a permis de maîtriser les concepts d'architecture logicielle moderne et de développer une solution complète multi-clients. 
-                    J'ai appris à structurer un projet selon les principes de la Clean Architecture, à implémenter des patterns de conception robustes, 
-                    et à gérer la complexité d'une application distribuée. Le développement simultané d'une API, d'une application web et d'une application mobile 
-                    m'a donné une vision complète du développement full-stack et m'a permis de comprendre les enjeux de la synchronisation entre différents clients.
+                    Ce projet m'a permis de maîtriser les concepts d'architecture logicielle moderne et de développer
+                    une solution complète multi-clients.
+                    J'ai appris à structurer un projet selon les principes de la Clean Architecture, à implémenter des
+                    patterns de conception robustes,
+                    et à gérer la complexité d'une application distribuée. Le développement simultané d'une API, d'une
+                    application web et d'une application mobile
+                    m'a donné une vision complète du développement full-stack et m'a permis de comprendre les enjeux de
+                    la synchronisation entre différents clients.
                 </p>
             </article>
         </section>
     </main>
 </body>
+
 </html>
