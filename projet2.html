@@ -3,208 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMJetSky</title>
-    <link type="text/css" rel="stylesheet" href="./css/code.css">
+    <title>ArtistBot - Automatisation de dessin</title>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
-    <meta charset="UTF-8">
-    <title>Affichage PDF avec flèches</title>
-    <style>
-      #pdf-canvas {
-        border: 1px solid black;
-        display: block;
-        max-width: 50%;
-        margin-top: 10px;
-      }
-      #navigation {
-        text-align: center;
-        max-width: 50%;
-      }
-      #navigation button {
-        background-color: #7c2585;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        margin: 10px 5px;
-        border-radius: 8px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        #navigation button:hover {
-        background-color: #5e178b;
-        transform: scale(1.05);
-        }
-
-        #navigation span {
-        font-size: 16px;
-        font-weight: bold;
-        }
-    </style>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
-
+    <script src="./js/menu.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="./index.html" class="nav-link">A propos de moi</a>
-            <a href="./competences.html" class="nav-link">Compétences</a>
-            <div class="dropdown">
-                Projets
-                <div class="dropdown-content">
-                    <a href="./projet1.html">Gestion de stage</a>
-                    <a href="./projet2.html">Base de données Jet-ski</a>
-                    <a href="./projet4.html">ArtistBot</a>
-                </div>
-            </div>
-            <a href="./parcours.html" class="nav-link">Cursus scolaire</a>
-            <a href="./experience.html" class="nav-link">Expériences professionnelles</a>
-            <a href="./formulaire.php" class="nav-link">Contact</a>
-            <a href="./images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
-        </nav>
-    </header>
+
     <main class="main-content">
         <section class="presentation-projet">
-            <h1>Projet n°2, Base de donnée Jet-ski <strong>en SQL</strong></h1>
-            <center>
-                <img src="./images/sql.png" title="sql" alt="logo du sql" class="gaucheflex" />
-            </center>
-            <h2><a href="https://github.com/Damien-blrt/Gestion-de-stage" class="nav-link">Voir le code source sur GitHub</a></h2>
+            <h1>ArtistBot <span class="tech-badge">Automatisation de dessin</span></h1>
+            <div class="project-image-placeholder">
+                <img src="./images/Python-logo-notext.svg" title="python" alt="logo de python" />
+            </div>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">PyAutoGUI</span>
+                <span class="tech-tag">Tkinter</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">GDAL</span>
+            </div>
+            <h2><a href="https://github.com/Damien-blrt/Artistbot" class="nav-link" target="_blank">Voir le code source sur GitHub</a></h2>
         </section>
+
         <section class="about">
             <article>
                 <h3>Contexte</h3>
                 <p>
-                    Lors du deuxième projet de BUT informatique, j’ai dû coder en SQL une Base de donnée qui possédait les fonctionnalités suivantes :<br>
-                    Le script .sql permettant de supprimer, créer, remplir (jeu de données), afficher les tables et les
-                    requêtes permettant de répondre aux questions<br>
+                    Dans le cadre de mes explorations personnelles en programmation, j'ai décidé de créer une application en Python qui automatise le dessin d'une image 
+                    à l'aide d'une palette de couleurs sur une interface graphique. Ce projet m'a permis de mieux comprendre l'automatisation, le traitement d'image, 
+                    ainsi que l'utilisation de bibliothèques Python comme <strong>pyautogui</strong>, <strong>tkinter</strong>, <strong>numpy</strong> ou encore <strong>gdal</strong>.
                 </p>
             </article>
         </section>
+
         <section class="about">
             <article>
                 <h3>Objectif</h3>
                 <p>
-                    L'objectif était de concevoir et implémenter une base de données complète pour 
-                    une entreprise de location de jet-skis, incluant la gestion des produits, des clients, 
-                    des fournisseurs et des locations.<br> Le projet devait fournir un script SQL permettant 
-                    de créer la structure de la base, d'insérer un jeu de données de test, et de réaliser 
-                    des requêtes d'analyse pertinentes pour le métier.
+                    L'objectif de ce projet était de concevoir un outil capable de reproduire une image pixel par pixel sur une application de dessin, 
+                    de manière totalement automatisée, à partir d'une simple palette de couleurs sélectionnée par l'utilisateur.
                 </p>
             </article>
         </section>
-        
+
         <section class="about">
             <article>
                 <h3>Travail réalisé</h3>
-                <p>
-                    J'ai développé une base de données complète qui possédait les fonctionnalités suivantes :<br>
-                    - Création de la base de données et des tables nécessaires à la gestion des jet-skis, clients, fournisseurs et locations.<br>
-                    - Insertion d'un jeu de données de test pour simuler des opérations réelles.<br>
-                    - Requêtes permettant de répondre à des questions métier, telles que la disponibilité des jet-skis, les clients les plus fréquents, etc.<br>
-                    - Gestion des relations entre les tables pour assurer l'intégrité des données.<br>
-                </p>
-            </article> 
-            <center>
-                <article class="flex-column">
-                    <p>
-                        Nous avons du également rédiger un document lié à la partie économique :
-                        <canvas id="pdf-canvas"></canvas>
-                        <div id="navigation">
-                        <button onclick="previousPage()">⬅ Précédente</button>
-                        <span>Page <span id="page-num">1</span> / <span id="page-count">--</span></span>
-                        <button onclick="nextPage()">Suivante ➡</button>
-                        </div>
-                    
-                    </p>
-                </article>
-            </center>
-        </section>
-
-
+                <div class="work-grid">
+                    <div class="work-item">
+                        <h4>Chargement de l'image</h4>
+                        <p>Lecture et traitement d'un fichier image pour extraire les couleurs des pixels.</p>
+                    </div>
+                    <div class="work-item">
+                        <h4>Sélection des couleurs</h4>
+                        <p>Enregistrement des positions des couleurs dans la palette, sur l'interface de dessin.</p>
+                    </div>
+                    <div class="work-item">
+                        <h4>Définition de la zone de dessin</h4>
+                        <p>L'utilisateur sélectionne les coins de la toile à l'aide de clics, ce qui permet de déduire les dimensions.</p>
+                    </div>
+                    <div class="work-item">
+                        <h4>Automatisation du dessin</h4>
+                        <p>Pixel par pixel, l'image est reproduite avec précision grâce à des clics automatisés.</p>
+                    </div>
+                    <div class="work-item">
+                        <h4>Interface utilisateur</h4>
+                        <p>Utilisation de Tkinter pour guider l'utilisateur durant les différentes étapes.</p>
+                    </div>
+                    <div class="work-item">
+                        <h4>Optimisation</h4>
+                        <p>Réduction des changements de couleurs et accélération du processus via une gestion optimisée des délais.</p>
+                    </div>
+                </div>
             </article>
         </section>
+
+        <section class="video-container">
+            <h3>Présentation en vidéo</h3>
+            <div class="video-wrapper">
+                <video controls>
+                    <source src="./images/animation.mp4" type="video/mp4">
+                    Votre navigateur ne supporte pas la lecture de vidéos.
+                </video>
+            </div>
+        </section>
+
+        <section class="image-gallery">
+            <h3>Captures d'écran</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <p>Capture d'écran - Interface Tkinter</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <p>Capture d'écran - Résultat du dessin</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="about">
             <article>
                 <h3>Résultats</h3>
                 <p>
-                    <strong>Note obtenue :</strong> Pas encore noté <br><br>
-                    <strong>Appréciation :</strong> Les premiers retours sont positives malgrés que ce travail n'est pas encore évalué<br><br>
-                    <strong>Compétences développées :</strong><br>
-                    - Conception de bases de données relationnelles<br>
-                    - Rédaction de requêtes SQL "complexes"<br>
-                    - Gestion / analyses des données<br>
-                    - Compréhension des besoins métier et traduction en schéma de base de données<br><br>
-                    <strong>Ce que ce projet m'a appris :</strong> Ce projet m'a permis de comprendre l'importance de la modélisation des données et de la gestion des relations entre les tables. J'ai également appris à rédiger des requêtes SQL complexes pour extraire des informations pertinentes à partir de la base de données. Cela m'a donné une meilleure compréhension de la manière dont les bases de données sont utilisées dans le monde réel et comment elles peuvent être optimisées pour répondre aux besoins d'une entreprise.<br>
-                     J'ai particulièrement apprécié le défi de concevoir une base de données complète et fonctionnelle. Cela m'a permis d'appliquer mes connaissances théoriques à un projet concret et de voir comment les bases de données peuvent être utilisées pour résoudre des problèmes réels. J'ai également aimé travailler sur les requêtes SQL, car cela m'a permis d'explorer différentes façons d'interroger et d'analyser les données.<br>
+                    <strong>Compétences développées :</strong> Programmation Python, automatisation avec PyAutoGUI, gestion d'interfaces graphiques avec Tkinter, 
+                    traitement d'image avec NumPy et GDAL.<br><br>
+                    <strong>Ce que ce projet m'a appris :</strong> J'ai découvert les limites et possibilités de l'automatisation via les scripts, 
+                    et j'ai dû relever des défis comme la reconnaissance de couleurs, la synchronisation précise des clics et l'optimisation des performances. 
+                    Ce projet a été une excellente occasion de renforcer mes compétences en développement Python tout en travaillant sur un projet concret et amusant.
                 </p>
             </article>
         </section>
     </main>
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
-  <script>
-    const url = './images/jetsky.pdf'; 
-
-    let pdfDoc = null,
-        pageNum = 1,
-        pageRendering = false,
-        pageNumPending = null,
-        scale = 1.2,
-        canvas = document.getElementById('pdf-canvas'),
-        ctx = canvas.getContext('2d');
-
-    function renderPage(num) {
-      pageRendering = true;
-      pdfDoc.getPage(num).then(function(page) {
-        let viewport = page.getViewport({ scale: scale });
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-        let renderContext = {
-          canvasContext: ctx,
-          viewport: viewport
-        };
-        let renderTask = page.render(renderContext);
-
-        renderTask.promise.then(function () {
-          pageRendering = false;
-          if (pageNumPending !== null) {
-            renderPage(pageNumPending);
-            pageNumPending = null;
-          }
-        });
-      });
-
-      document.getElementById('page-num').textContent = num;
-    }
-
-    function queueRenderPage(num) {
-      if (pageRendering) {
-        pageNumPending = num;
-      } else {
-        renderPage(num);
-      }
-    }
-
-    function previousPage() {
-      if (pageNum <= 1) return;
-      pageNum--;
-      queueRenderPage(pageNum);
-    }
-
-    function nextPage() {
-      if (pageNum >= pdfDoc.numPages) return;
-      pageNum++;
-      queueRenderPage(pageNum);
-    }
-
-    pdfjsLib.getDocument(url).promise.then(function (pdfDoc_) {
-      pdfDoc = pdfDoc_;
-      document.getElementById('page-count').textContent = pdfDoc.numPages;
-      renderPage(pageNum);
-    });
-  </script>
 </body>
 </html>

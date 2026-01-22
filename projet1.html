@@ -3,110 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestion-de-stage</title>
+    <title>Jardinageons - Gestion de potager</title>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
+    <script src="./js/menu.js" defer></script>
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <a href="./index.html" class="nav-link">A propos de moi</a>
-            <a href="./competences.html" class="nav-link">Compétences</a>
-            <div class="dropdown">
-                Projets
-                <div class="dropdown-content">
-                    <a href="./projet1.html">Gestion de stage</a>
-                    <a href="./projet2.html">Base de données Jet-ski</a>
-                    <a href="./projet4.html">ArtistBot</a>
-                </div>
-            </div>
-            <a href="./parcours.html" class="nav-link">Cursus scolaire</a>
-            <a href="./experience.html" class="nav-link">Expériences professionnelles</a>
-            <a href="./formulaire.php" class="nav-link">Contact</a>
-            <a href="./images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
-        </nav>
-    </header>
     <main class="main-content">
         <section class="presentation-projet">
-            <h1>Projet n°1, Gestion de stage <strong>en C</strong></h1>
-            <center>
-                <img src="./images/C.png" title="c" alt="logo du c" class="gaucheflex" />
-            </center>
-            <h2><a href="https://github.com/Damien-blrt/Gestion-de-stage" class="nav-link">Voir le code source sur GitHub</a></h2>
+            <h1>Jardinageons <span class="tech-badge">Application de gestion de potager</span></h1>
+            <div class="project-image-placeholder">
+                <p class="placeholder-text">Image du projet Jardinageons</p>
+            </div>
+            <div class="tech-stack">
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">Twig</span>
+                <span class="tech-tag">Bootstrap</span>
+                <span class="tech-tag">Alto Router</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">Kotlin</span>
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">Entity Framework</span>
+                <span class="tech-tag">Blazor</span>
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">xUnit</span>
+            </div>
         </section>
-        
+
         <section class="about">
             <article>
                 <h3>Contexte</h3>
                 <p>
-                    Lors du premier projet de BUT informatique, j'ai dû coder en C une application de gestion de stages. Ce projet constituait ma première expérience significative de programmation dans le cadre de ma formation universitaire.
+                    Jardinageons est un projet de gestion de potager conçu pour aider les particuliers à organiser, suivre et optimiser leurs activités de jardinage. 
+                    Le produit centralise l'ensemble des données liées au jardin — plantations, arrosage, stocks, récoltes et historique — afin de remplacer les supports papier 
+                    et les outils fragmentés par une solution unique et cohérente.
                 </p>
             </article>
         </section>
-        
 
         <section class="about">
             <article>
                 <h3>Objectif</h3>
                 <p>
-                    L'objectif était de développer une application en langage C permettant la gestion complète des stages pour les étudiants et les responsables, avec une interface utilisateur en ligne de commande et une gestion persistante des données.
+                    Développer une application de gestion de potager permettant de planifier, organiser et suivre l'ensemble des activités de jardinage 
+                    (plantations, arrosage, stocks et récoltes) via une interface claire et structurée. Le projet vise à offrir une solution complète 
+                    et moderne pour remplacer les méthodes traditionnelles de suivi de jardinage.
                 </p>
             </article>
         </section>
-        
+
+        <section class="about">
+            <article>
+                <h3>Architecture technique</h3>
+                <p>
+                    Le projet repose sur une <strong>architecture multi-clients</strong> (applications mobile et web) connectée à une API centrale. 
+                    Cette API est responsable de la gestion des données et de l'application des règles métier.
+                </p>
+                <div class="architecture-details">
+                    <div class="arch-item">
+                        <h4>Clean Architecture</h4>
+                        <p>Architecture inspirée de la Clean Architecture, avec une séparation claire entre le domaine métier, la couche applicative et la persistance.</p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>Repository & Unit of Work</h4>
+                        <p>Accès aux données structuré autour des patterns Repository et Unit of Work, garantissant cohérence transactionnelle et découplage.</p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>Mappers</h4>
+                        <p>Système de mappers assurant la transformation entre entités métier et DTOs exposés par l'API.</p>
+                    </div>
+                </div>
+                <p class="architecture-benefit">
+                    Cette approche permet une application maintenable, testable et évolutive, capable de supporter plusieurs clients et des fonctionnalités futures.
+                </p>
+            </article>
+        </section>
 
         <section class="about">
             <article>
                 <h3>Travail réalisé</h3>
-                <p>
-                    J'ai développé une application complète qui possédait les fonctionnalités suivantes :<br>
-                    <strong>- Menu principal :</strong> avec un choix d'accès pour les étudiants et les responsables de stages.<br>
-                    <strong>- Gestion des offres de stages :</strong> affichage, ajout, suppression, recherche par référence et par département.<br>
-                    <strong>- Gestion des étudiants :</strong> affichage des candidatures, ajout de candidatures, affectation des stages, mise à jour des notes, suppression des étudiants.<br>
-                    <strong>- Mise à jour des fichiers :</strong> sauvegarde des données à la sortie du programme.
-                </p>
-                
-                <p>
-                    <strong>Fonctionnalités détaillées :</strong><br>
-                    <strong>- Menu Principal :</strong> Permet de choisir entre l'interface pour les étudiants ou pour les responsables de stages.<br>
-                    <strong>- Gestion des responsables de stages :</strong><br>
-                    - Afficher les stages pourvus et non pourvus.<br>
-                    - Lister les étudiants sans stages.<br>
-                    - Obtenir des informations sur un stage donné.<br>
-                    - Ajouter ou supprimer des stages.<br>
-                    - Affecter des stages à des étudiants.<br>
-                    - Ajouter des notes à un étudiant.<br>
-                    - Supprimer des étudiants.<br>
-                    <strong>- Gestion des étudiants :</strong><br>
-                    - Identification de l'étudiant via son numéro.<br>
-                    - Afficher les candidatures d'un étudiant.<br>
-                    - Candidater à un stage.<br>
-                    - Afficher les notes finales des étudiants.<br>
-                    - Ajouter des notes aux étudiants.<br>
-                    - Supprimer des étudiants du système.<br>
-                </p>
-            </article>
-            
-            <section class="video-container">
-                <h3>Présentation en vidéo</h3>
-                <div class="video-wrapper">
-                    <video controls>
-                        <source src="./images/Stage.mp4" type="video/mp4">
-                        Votre navigateur ne supporte pas la lecture de vidéos.
-                    </video>
+                <div class="work-grid">
+                    <div class="work-item">
+                        <h4>Backend API</h4>
+                        <ul>
+                            <li>Développement d'une API RESTful en C# avec Entity Framework</li>
+                            <li>Implémentation de la Clean Architecture</li>
+                            <li>Patterns Repository et Unit of Work</li>
+                            <li>Système de mappers pour les DTOs</li>
+                            <li>Tests unitaires avec xUnit</li>
+                        </ul>
+                    </div>
+                    <div class="work-item">
+                        <h4>Application Web</h4>
+                        <ul>
+                            <li>Interface web en PHP avec Twig</li>
+                            <li>Framework Bootstrap pour le design responsive</li>
+                            <li>Alto Router pour le routage</li>
+                            <li>JavaScript pour l'interactivité</li>
+                        </ul>
+                    </div>
+                    <div class="work-item">
+                        <h4>Application Mobile</h4>
+                        <ul>
+                            <li>Développement d'une application Android en Kotlin</li>
+                            <li>Intégration avec l'API centrale</li>
+                            <li>Interface utilisateur intuitive</li>
+                        </ul>
+                    </div>
+                    <div class="work-item">
+                        <h4>Base de données</h4>
+                        <ul>
+                            <li>Conception et implémentation en PostgreSQL</li>
+                            <li>Gestion des plantations, arrosage, stocks et récoltes</li>
+                            <li>Historique complet des activités</li>
+                        </ul>
+                    </div>
+                    <div class="work-item">
+                        <h4>DevOps</h4>
+                        <ul>
+                            <li>Containerisation avec Docker</li>
+                            <li>Configuration des environnements de développement</li>
+                        </ul>
+                    </div>
+                    <div class="work-item">
+                        <h4>Fonctionnalités</h4>
+                        <ul>
+                            <li>Gestion des plantations</li>
+                            <li>Suivi de l'arrosage</li>
+                            <li>Gestion des stocks</li>
+                            <li>Enregistrement des récoltes</li>
+                            <li>Historique des activités</li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
+            </article>
         </section>
-        
+
+        <section class="image-gallery">
+            <h3>Captures d'écran</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <p>Capture d'écran - Interface web</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <p>Capture d'écran - Application mobile</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <p>Capture d'écran - API et architecture</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="about">
             <article>
                 <h3>Résultats</h3>
                 <p>
-                    <strong>Note obtenue :</strong> 17/20 (la moyenne de la promotion est de 12.83)<br><br>
-                    <strong>Appréciation :</strong> Projet réussi avec brio malgré les défis techniques rencontrés<br><br>
-                    <strong>Compétences développées :</strong> Programmation en C, gestion de tableaux, manipulation de fichiers, développement d'interfaces utilisateur en ligne de commande<br><br>
-                    <strong>Ce que ce projet m'a appris :</strong> Ce projet m'a permis de mettre en application mes premiers cours de C. J'ai été confronté, via le sujet et mes connaissances à l'époque, à un nombre important de tableaux et quelques fichiers, mais j'ai su relever ce défi avec succès.
+                    <strong>Compétences développées :</strong><br>
+                    Architecture logicielle avancée, développement d'API RESTful, Clean Architecture, patterns de conception (Repository, Unit of Work), 
+                    développement multi-plateformes (web et mobile), gestion de bases de données PostgreSQL, tests unitaires, containerisation Docker, 
+                    développement en C#, PHP, Kotlin, et Blazor.
+                </p>
+                <p>
+                    <strong>Ce que ce projet m'a appris :</strong><br>
+                    Ce projet m'a permis de maîtriser les concepts d'architecture logicielle moderne et de développer une solution complète multi-clients. 
+                    J'ai appris à structurer un projet selon les principes de la Clean Architecture, à implémenter des patterns de conception robustes, 
+                    et à gérer la complexité d'une application distribuée. Le développement simultané d'une API, d'une application web et d'une application mobile 
+                    m'a donné une vision complète du développement full-stack et m'a permis de comprendre les enjeux de la synchronisation entre différents clients.
                 </p>
             </article>
         </section>

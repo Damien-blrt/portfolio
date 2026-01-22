@@ -3,69 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pierre-feuille-ciseaux</title>
+    <title>Pokerandom - Site web avec API</title>
     <link type="text/css" rel="stylesheet" href="./css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="./js/menu.js" defer></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="./index.html" class="nav-link">A propos de moi</a>
-            <a href="./competences.html" class="nav-link">Compétences</a>
-            <div class="dropdown">
-                Projets
-                <div class="dropdown-content">
-                    <a href="./projet1.html">Gestion de stage</a>
-                    <a href="./projet2.html">Base de données Jet-ski</a>
-                    <a href="./projet4.html">ArtistBot</a>
-                </div>
-            </div>
-            <a href="./parcours.html" class="nav-link">Cursus scolaire</a>
-            <a href="./experience.html" class="nav-link">Expériences professionnelles</a>
-            <a href="./formulaire.php" class="nav-link">Contact</a>
-            <a href="./images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
-        </nav>
-    </header>
+
     <main class="main-content">
         <section class="presentation-projet">
-            <h1>Projet n°3, Pierre feuille ciseaux <strong>en C</strong></h1>
-            <center>
-                <img src="./images/C.png" title="c" alt="logo du c" class="gaucheflex" />
-            </center>
-        </section>
-        <section class="about">
-            <article>
-                <h2><a href="https://github.com/Damien-blrt/Pierre-feuille-ciseaux" class="nav-link">Voir le code source sur GitHub</a></h2>
-            </article>
-        </section>
-        <section class="video-container">
-            <h2>Présentation en vidéo</h2>
-            <div class="video-wrapper">
-                <video controls muted>
-                    <source src="./images/PFC.mp4" type="video/mp4">
-                    Votre navigateur ne supporte pas la lecture de vidéos.
-                </video>
+            <h1>Pokerandom <span class="tech-badge">Site web avec API</span></h1>
+            <div class="project-image-placeholder">
+                <p class="placeholder-text">Image du projet Pokerandom</p>
+            </div>
+            <div class="tech-stack">
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">API RESTful</span>
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">JavaScript</span>
             </div>
         </section>
+
         <section class="about">
-            <article class="flex-column">
-                <h2>README</h2>
-                <div id="readme-content">Chargement du README...</div>
+            <article>
+                <h3>Contexte</h3>
+                <p>
+                    Pokerandom est un site web connecté à une API que j'ai créée. Ce projet m'a permis de développer une application complète avec une séparation 
+                    claire entre le frontend (site web en PHP) et le backend (API en C#), démontrant ma capacité à concevoir et implémenter une architecture 
+                    client-serveur moderne.
+                </p>
+            </article>
+        </section>
+
+        <section class="about">
+            <article>
+                <h3>Objectif</h3>
+                <p>
+                    Créer un site web fonctionnel connecté à une API personnalisée, permettant de démontrer mes compétences en développement full-stack, 
+                    en architecture d'API RESTful et en intégration frontend-backend.
+                </p>
+            </article>
+        </section>
+
+        <section class="about">
+            <article>
+                <h3>Architecture</h3>
+                <div class="architecture-details">
+                    <div class="arch-item">
+                        <h4>API Backend (C#)</h4>
+                        <p>Développement d'une API RESTful en C# pour gérer la logique métier et les données.</p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>Site Web (PHP)</h4>
+                        <p>Interface utilisateur développée en PHP, connectée à l'API pour afficher et interagir avec les données.</p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>Communication</h4>
+                        <p>Communication entre le frontend et le backend via des requêtes HTTP/REST.</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="about">
+            <article>
+                <h3>Travail réalisé</h3>
+                <div class="work-grid">
+                    <div class="work-item">
+                        <h4>API RESTful en C#</h4>
+                        <ul>
+                            <li>Conception et développement de l'API</li>
+                            <li>Endpoints REST pour les différentes fonctionnalités</li>
+                            <li>Gestion des requêtes HTTP</li>
+                            <li>Structure modulaire et maintenable</li>
+                        </ul>
+                    </div>
+                    <div class="work-item">
+                        <h4>Site Web en PHP</h4>
+                        <ul>
+                            <li>Développement de l'interface utilisateur</li>
+                            <li>Intégration avec l'API via requêtes HTTP</li>
+                            <li>Gestion des interactions utilisateur</li>
+                            <li>Interface responsive et intuitive</li>
+                        </ul>
+                    </div>
+                    <div class="work-item">
+                        <h4>JavaScript</h4>
+                        <ul>
+                            <li>Interactivité côté client</li>
+                            <li>Gestion des appels API</li>
+                            <li>Amélioration de l'expérience utilisateur</li>
+                        </ul>
+                    </div>
+                    <div class="work-item">
+                        <h4>Intégration</h4>
+                        <ul>
+                            <li>Communication frontend-backend</li>
+                            <li>Gestion des erreurs</li>
+                            <li>Validation des données</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="image-gallery">
+            <h3>Captures d'écran</h3>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <p>Capture d'écran - Interface du site</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <p>Capture d'écran - API et endpoints</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">
+                        <p>Capture d'écran - Fonctionnalités</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <article>
+                <h3>Résultats</h3>
+                <p>
+                    <strong>Compétences développées :</strong> Développement d'API RESTful en C#, développement web en PHP, intégration frontend-backend, 
+                    architecture client-serveur, gestion des requêtes HTTP, JavaScript pour l'interactivité.<br><br>
+                    <strong>Ce que ce projet m'a appris :</strong> Ce projet m'a permis de comprendre en profondeur l'architecture d'une application web moderne 
+                    avec séparation frontend/backend. J'ai appris à concevoir une API RESTful robuste, à gérer la communication entre différents composants, 
+                    et à créer une interface utilisateur qui interagit efficacement avec une API. Cette expérience m'a donné une vision complète du développement 
+                    full-stack et m'a permis de maîtriser les concepts clés de l'intégration entre différentes technologies.
+                </p>
             </article>
         </section>
     </main>
-
-    <script>
-        fetch('./ProjetDeC.md')
-            .then(response => response.text())
-            .then(text => {
-                
-                document.getElementById('readme-content').innerHTML = marked.parse(text);
-            })
-            .catch(error => {
-                document.getElementById('readme-content').textContent = "Impossible de charger le fichier README.md.";
-                console.error("Erreur lors du chargement du fichier README :", error);
-            });
-    </script>
 </body>
 </html>

@@ -3,98 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site de présentation</title>
+    <title>Damien Ballerat - Portfolio</title>  
     <link type="text/css" rel="stylesheet" href="./css/style.css">
-    
+    <script src="./js/menu.js" defer></script>
 </head>
-<body class="flex-column">
+<body>
 
-    <header>
-        <nav class="navbar">
-            <a href="./index.html" class="nav-link">A propos de moi</a>
-            <a href="./competences.html" class="nav-link">Compétences</a>
-            <div class="dropdown">
-                Projets
-                <div class="dropdown-content">
-                    <a href="./projet1.html">Gestion de stage</a>
-                    <a href="./projet2.html">Base de données Jet-ski</a>
-                    <a href="./projet4.html">ArtistBot</a>
+    <main class="main-container">
+        <!-- Section de présentation -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="./images/f1.jpg" title="Damien Ballerat" alt="photo de Damien Ballerat"/>
+                </div>
+                <div class="hero-text">
+                    <h1>Damien Ballerat</h1>
+                    <h2>Étudiant en BUT informatique</h2>
+                    <p class="hero-email">damien.ballerat@etu.uca.fr</p>
                 </div>
             </div>
-            <a href="./parcours.html" class="nav-link">Cursus scolaire</a>
-            <a href="./experience.html" class="nav-link">Expériences professionnelles</a>
-            <a href="./formulaire.php" class="nav-link">Contact</a>
-            <a href="./images/cv_damien_ballerat.pdf" download="CV_Damien_Ballerat.pdf" class="nav-link">Télécharger mon CV</a>
-        </nav>
-    </header>
-
-    <main>
-        <section class="presentation">
-            
-            <img src="./images/f1.jpg" title="Damien Ballerat" 
-                 alt="photo de Damien Ballerat"/>
-            <article>
-             <h1>Damien Ballerat</h1>
-             <h3>
-                Étudiant en BUT informatique <br>
-                damien.ballerat@etu.uca.fr
-             </h3>
-            </article> 
         </section>
 
-        <section class="about">
-                <h2>À propos de moi :</h2>
-                <article>
-                    <article class="flex-column">
-                    <p>
-                        <strong>Qui suis-je ?</strong><br>
-                        Je m'appelle Damien Ballerat et je suis actuellement étudiant en 1ère année au BUT informatique de Clermont-Ferrand.<br><br>
-                        Grâce à cette formation, j’ai acquis la capacité de concevoir des programmes informatiques dans différents langages de programmation, ce qui me réjouit.<br>
-                        J’ai participé à la Coupe de France UNSS Excellence avec l'équipe du lycée en terminale, où j’ai pu jouer contre certains des plus grands espoirs du pays.<br>
-                        Je m'intéresse également aux jeux vidéo de tous genres tels que Balatro ou Cyberpunk 2077 pour ne citer qu’eux.
-                    </p>
-                    <img src="./images/Basket.gif" title="Basket lego" alt="image de basket lego"/>
-                    </article>
-                    <article class="flex-column">
-                        <img src="./images/n.png" title="\n" alt="image de \n" class="marginbottom"/>
-                    <p>
-                        <strong>Mes qualités :</strong><br>
-                        La minutie guide chaque ligne de code que j'écris, tandis que ma patience me permet de résoudre méthodiquement les défis techniques les plus complexes.<br>
-                        Mon ambition me pousse constamment à élargir mes compétences, notamment en C, C++ et C# pour le développement logiciel, ainsi qu'en SQL pour la gestion de bases de données.<br>
-                        Mon sens aigu du travail se reflète dans mon investissement tant dans mes projets informatiques que dans ma pratique intensive du basketball à niveau pré-national (six entraînements par semaine).
-                    </p>
-                    </article>
-                    <article class="flex-column">
-                        <p>
-                            <strong>Ce que je recherche :</strong><br>
-                            Je suis à la recherche d'une alternance pour l'année 2025/2026 dans le domaine de la programmation, où je pourrai mettre à profit mes compétences techniques et mes qualités personnelles.<br><br>
-                            Je suis particulièrement intéressé par les projets qui me permettront de développer mes compétences en C, C++ et C#, ainsi qu'en SQL.<br>
-                            Je suis également ouvert à d'autres technologies et langages de programmation, car je crois fermement que la diversité des expériences enrichit mes compétences.
-                        </p>
-                        <img src="./images/Balatro.png" title="balatro" alt="image de joker"/>
-                        </article>
-        </section>
-
-        <section class="about">
-                <h2>Qualités personnelles :</h2>
-                <article>
-                    <div>
-                        <img src="./images/roman.png" title="statue romaine" alt="statue romaine de moi" class="gaucheflex" />
+        <!-- Section À propos de moi -->
+        <section class="about-section">
+            <div class="section-wrapper">
+                <h2 class="section-title">À propos de moi</h2>
+                
+                <div class="about-cards-grid">
+                    <div class="info-card">
+                        <div class="card-header">
+                            <span class="card-icon">👤</span>
+                            <h3>Qui suis-je ?</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Je m'appelle Damien Ballerat et je suis actuellement étudiant en 2ème année au BUT informatique de Clermont-Ferrand.</p>
+                            <p>Grâce à cette formation, j'ai acquis la capacité de concevoir des programmes informatiques dans différents langages de programmation, ce qui me réjouit.</p>
+                            <p>J'ai participé à la Coupe de France UNSS Excellence avec l'équipe du lycée en terminale, où j'ai pu jouer contre certains des plus grands espoirs du pays.</p>
+                            <p>Je m'intéresse également aux jeux vidéo de tous genres tels que Balatro ou Cyberpunk 2077 pour ne citer qu'eux.</p>
+                        </div>
                     </div>
-                <p>
-                    Je suis une personne patiente et ambitieuse.<br><br>
-                    Ma patience se manifeste par ma capacité à m’investir dans des tâches longues et répétitives,<br>
-                    tandis que mon ambition m’incite à me fixer des objectifs élevés pour repousser mes limites.<br><br>
-                    Un exemple marquant est mon travail pour obtenir mon baccalauréat :<br>
-                    malgré des résultats moyens en classe de 1ère, je me suis fixé l’objectif d’obtenir la mention "Très bien".<br>
-                    Bien que je n’aie pas atteint cet objectif, j’ai obtenu mon diplôme avec une mention "Bien",
-                    avec des notes de 16 et 20 dans mes spécialités.
-                </p>
-            </article>
+
+                    <div class="info-card">
+                        <div class="card-header">
+                            <span class="card-icon">⭐</span>
+                            <h3>Mes qualités</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>La minutie guide chaque ligne de code que j'écris, tandis que ma patience me permet de résoudre méthodiquement les défis techniques les plus complexes.</p>
+                            <p>Mon ambition me pousse constamment à élargir mes compétences, notamment en C, C++, C#, Python, ainsi qu'en SQL pour la gestion de bases de données.</p>
+                            <p>Mon sens aigu du travail se reflète dans mon investissement tant dans mes projets informatiques que dans ma pratique intensive du basketball.</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="card-header">
+                            <span class="card-icon">🎯</span>
+                            <h3>Ce que je recherche</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>Je suis à la recherche d'une alternance pour l'année 2025/2026 dans le domaine de la programmation, où je pourrai mettre à profit mes compétences techniques et mes qualités personnelles.</p>
+                            <p>Je suis particulièrement intéressé par les projets qui me permettront de développer mes compétences en développement logiciel, web et mobile.</p>
+                            <p>Je suis également ouvert à d'autres technologies et langages de programmation, car je crois fermement que la diversité des expériences enrichit mes compétences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Qualités personnelles -->
+        <section class="qualities-section">
+            <div class="section-wrapper">
+                <h2 class="section-title">Qualités personnelles</h2>
+                
+                <div class="qualities-layout">
+                    <div class="qualities-text-content">
+                        <h3>Patience & Ambition</h3>
+                        <p class="qualities-intro">
+                            Je suis une personne patiente et ambitieuse. Ma patience se manifeste par ma capacité à m'investir dans des tâches longues et répétitives, tandis que mon ambition m'incite à me fixer des objectifs élevés pour repousser mes limites.
+                        </p>
+                        <div class="achievement-box">
+                            <h4>Un exemple marquant</h4>
+                            <p>
+                                Malgré des résultats moyens en classe de 1ère, je me suis fixé l'objectif d'obtenir la mention "Très bien" au baccalauréat. Bien que je n'aie pas atteint cet objectif, j'ai obtenu mon diplôme avec une mention "Bien", avec des notes de 16 et 20 dans mes spécialités.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="qualities-image-content">
+                        <img src="./images/roman.png" title="statue romaine" alt="statue romaine de moi" />
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
-
 
 </body>
 </html>
